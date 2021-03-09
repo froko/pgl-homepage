@@ -1,0 +1,22 @@
+.slick-slider {
+  height: 270px;
+}
+
+.slick-next,
+.slick-prev {
+  z-index: 9;
+  opacity: 0.9;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 40px;
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slick-prev {
+  left: 0px;
+}
