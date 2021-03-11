@@ -8,7 +8,7 @@ const DesktopNavigation = ({ links }) => {
       {links.map((link, key) => (
         <AnchorLink
           key={`menu_desktop_link${key}`}
-          className="ml-6 font-medium border-b-2 pb-2 border-transparent text-gray-100 hover:text-white hover:border-white transition duration-150 ease-in-out"
+          className="ml-6 font-medium border-b-2 pb-2 border-transparent text-gray-700 hover:text-gray-900 hover:border-gray-900 transition duration-150 ease-in-out"
           to={link.to}
         >
           {link.name}

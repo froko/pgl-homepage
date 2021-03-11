@@ -21,6 +21,9 @@ module.exports = {
       { name: 'Kontakt', to: '/#contact' }
     ]
   },
+  flags: {
+    DEV_SSR: false
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
@@ -29,10 +32,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-plugin-anchor-links',
-      options: {
-        offset: -66
-      }
+      resolve: 'gatsby-plugin-anchor-links'
     },
     {
       resolve: 'gatsby-source-contentful',
