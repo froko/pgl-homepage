@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import Hero from './hero';
 import News from './news';
 import Agenda from './agenda';
 import About from './about';
@@ -11,11 +10,10 @@ import Media from './media';
 import Shop from './shop';
 import Contact from './contact';
 
-export default function Home() {
+const Home = () => {
   return (
     <Layout>
       <SEO title="PGL" />
-      <Hero />
       <News />
       <Agenda />
       <About />
@@ -24,4 +22,6 @@ export default function Home() {
       <Contact />
     </Layout>
   );
-}
+};
+
+export default Home;

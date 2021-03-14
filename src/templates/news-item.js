@@ -6,7 +6,7 @@ import { Disqus } from 'gatsby-plugin-disqus';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
-import Layout from '../components/layout';
+import Layout from './template-layout';
 import SEO from '../components/seo';
 import Carousel from '../components/carousel';
 
@@ -17,7 +17,7 @@ const NewsItem = (props) => {
   const Container = tw.div`container mx-auto`;
   const FlexBox = tw.div`flex flex-wrap mb-8`;
   const CarouselContainer = tw.div`w-full lg:w-2/4`;
-  const TextContainer = tw.div`w-full mt-4 lg:mt-0 lg:w-2/4 lg:pl-4`;
+  const TextContainer = tw.div`w-full mt-4 lg:mt-0 lg:w-2/4 lg:pl-12`;
   const Title = tw.h2`text-pgl-blue text-xl font-bold`;
   const Author = tw.p`italic pb-4`;
   const Bold = tw.span`font-bold`;

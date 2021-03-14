@@ -9,16 +9,16 @@ import { BlueBackground, Container, FlexBox, LightGray, PglBlue, Section } from 
 const MediaCard = (props) => {
   const { slug, titel, vorschaubild } = props;
 
-  const Card = tw.div`w-full sm:w-auto bg-white shadow-sm rounded-md flex justify-center m-2 p-2`;
-  const Title = tw.h2`text-pgl-blue text-xl text-center font-bold mb-2`;
+  const Card = tw.div`w-full sm:w-auto flex justify-center m-2 p-2`;
+  const Title = tw.h2`text-gray-100 text-xl text-center font-bold mb-2`;
 
   const image = getImage(vorschaubild);
 
   return (
     <Card>
       <Link to={`/gallery/${slug}`}>
-        <Title>{titel}</Title>
         <GatsbyImage image={image} alt={titel} className="rounded-full" />
+        <Title>{titel}</Title>
       </Link>
     </Card>
   );
@@ -33,7 +33,7 @@ const Media = () => {
           titel
           slug
           vorschaubild {
-            gatsbyImageData(width: 270, height: 270)
+            gatsbyImageData(width: 200, height: 200)
           }
         }
       }
@@ -42,7 +42,7 @@ const Media = () => {
 
   return (
     <Section id="media">
-      <DiagonalHeader color={PglBlue} background={LightGray} title="Ton & Bild" />
+      <DiagonalHeader color={PglBlue} background={LightGray} title="Ton &amp; Bild" />
       <BlueBackground>
         <Container>
           <FlexBox>

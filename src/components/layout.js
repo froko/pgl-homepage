@@ -1,29 +1,55 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import tw, { GlobalStyles } from 'twin.macro';
-import styled from '@emotion/styled';
 
 import 'typeface-inter';
 import '../styles/style.css';
-
 import Header from './header';
-import Footer from './footer';
+import Hero from './hero';
+
+const getDimensions = (ele) => {
+  const { height } = ele.getBoundingClientRect();
+  const offsetTop = ele.offsetTop;
+  const offsetBottom = offsetTop + height;
+
+  return {
+    height,
+    offsetTop,
+    offsetBottom
+  };
+};
 
 const Layout = ({ children }) => {
-  const PageContainer = styled.div`
-    position: relative;
-    min-height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-  `;
-  const Content = tw.div`mt-16 pb-24`;
+  const [isTransparent, setTransparent] = useState(true);
+
+  const PageContainer = tw.div`min-h-screen overflow-y-auto overflow-x-hidden`;
+  const Content = tw.div``;
+
+  const heroRef = useRef(null);
+
+  const handleScroll = () => {
+    const { height: heroHeight } = getDimensions(heroRef.current);
+    const scrollPosition = window.scrollY + 80;
+
+    setTransparent(scrollPosition < heroHeight);
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <GlobalStyles />
       <PageContainer>
-        <Header />
-        <Content>{children}</Content>
-        <Footer />
+        <div className="bg-hero-pattern bg-fixed bg-full-width bg-no-repeat">
+          <Header isTransparent={isTransparent} />
+          <Hero heroRef={heroRef} />
+          <Content>{children}</Content>
+        </div>
       </PageContainer>
     </>
   );

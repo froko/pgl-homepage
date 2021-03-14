@@ -27,7 +27,7 @@ const menuItem = {
 const MobileNavigation = ({ links, isOpen, setIsOpen }) => {
   return (
     <Overlay isOpen={isOpen} setIsOpen={setIsOpen}>
-      <div className="container flex flex-col justify-center">
+      <div className="container mx-auto flex flex-col justify-center">
         <ul className="text-center">
           {links.map((link, key) => (
             <motion.li

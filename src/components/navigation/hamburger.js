@@ -4,7 +4,7 @@ import { FaBars } from 'react-icons/fa';
 
 const Hamburger = ({ setIsOpen }) => {
   return (
-    <button className="lg:hidden" onClick={() => setIsOpen(true)}>
+    <button onClick={() => setIsOpen(true)}>
       <FaBars className="h-6 w-auto text-gray-100 fill-current" />
     </button>
   );

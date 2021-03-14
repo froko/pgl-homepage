@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from '@emotion/styled';
 
 const smallWidth = 100 / 3;
 const midWidth = 100 / 4;
@@ -8,7 +8,7 @@ const Col = styled.div`
   flex-grow: 0;
   flex-shrink: 0;
   ${() => {
-    return css`
+    return `
       flex-basis: ${smallWidth}%;
       max-width: ${smallWidth}%;
     `;
@@ -16,7 +16,7 @@ const Col = styled.div`
 
   @media (min-width: 1024px) {
     ${() => {
-      return css`
+      return `
         flex-basis: ${midWidth}%;
         max-width: ${midWidth}%;
       `;
@@ -25,7 +25,7 @@ const Col = styled.div`
 
   @media (min-width: 1280px) {
     ${() => {
-      return css`
+      return `
         flex-basis: ${wideWidth}%;
         max-width: ${wideWidth}%;
       `;

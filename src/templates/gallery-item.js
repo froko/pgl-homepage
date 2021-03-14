@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import tw from 'twin.macro';
 
-import Layout from '../components/layout';
+import Layout from './template-layout';
 import SEO from '../components/seo';
 import Gallery from '../components/gallery';
 import Video from '../components/video';
@@ -19,19 +19,21 @@ const GalleryItem = (props) => {
   return (
     <Layout>
       <SEO title={props.data.item.titel} />
-      <Container>
-        <Title>{props.data.item.titel}</Title>
-        <PseudoMargin>
-          <Gallery images={props.data.item.bilder} />
-        </PseudoMargin>
-        <Spacer />
-        {props.data.item.youtubeLinks.map((url) => (
-          <VideoMargin key={counter++}>
-            <Video videoSrcURL={url} />
-            <Spacer />
-          </VideoMargin>
-        ))}
-      </Container>
+      <div className="bg-gray-100">
+        <Container>
+          <Title>{props.data.item.titel}</Title>
+          <PseudoMargin>
+            <Gallery images={props.data.item.bilder} />
+          </PseudoMargin>
+          <Spacer />
+          {props.data.item.youtubeLinks.map((url) => (
+            <VideoMargin key={counter++}>
+              <Video videoSrcURL={url} />
+              <Spacer />
+            </VideoMargin>
+          ))}
+        </Container>
+      </div>
     </Layout>
   );
 };
