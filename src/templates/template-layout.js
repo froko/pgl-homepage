@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           <button
             type="button"
             onClick={() => navigate('/')}
-            class="absolute left-0 bottom-4 items-center ml-4 md:ml-0 px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-pgl-blue hover:bg-blue-800"
+            className="absolute left-0 bottom-4 items-center ml-4 md:ml-0 px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-pgl-blue hover:bg-blue-800"
           >
             Zurück
           </button>
