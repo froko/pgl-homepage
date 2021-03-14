@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
 
   const handleScroll = () => {
     const { height: heroHeight } = getDimensions(heroRef.current);
-    const scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY + 80;
 
     setTransperant(scrollPosition < heroHeight);
   };

@@ -11,7 +11,7 @@ const Portrait = (props) => {
 
   const Card = tw.div`w-40 bg-white shadow-sm rounded-md flex flex-col justify-center items-center m-2 p-2`;
   const Name = tw.h2`text-pgl-blue text-center font-bold`;
-  const Info = tw.p`text-center text-gray-500`;
+  const Info = tw.p`text-center text-gray-700`;
 
   const image = getImage(portrait);
 

@@ -14,7 +14,7 @@ const Header = ({ isTransperant }) => {
 
   const StickyFlexBox = tw(
     motion.div
-  )`fixed w-full top-0 flex justify-between items-center z-10 h-16 p-4 opacity-0 bg-white shadow-md`;
+  )`fixed w-full top-0 flex justify-between items-center z-10 h-16 p-4 opacity-0 bg-pgl-blue shadow-md`;
 
   const variants = {
     hero: {
@@ -52,7 +52,7 @@ const Header = ({ isTransperant }) => {
   return (
     <StickyFlexBox animate={isTransperant ? 'hero' : 'content'} variants={variants}>
       <StaticImage
-        src="../images/header.png"
+        src="../images/header-bright.png"
         alt="lettering-header"
         layout="constrained"
         height={32}

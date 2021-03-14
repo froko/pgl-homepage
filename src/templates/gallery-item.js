@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import tw from 'twin.macro';
 
-import Layout from '../components/layout';
+import Layout from './template-layout';
 import SEO from '../components/seo';
 import Gallery from '../components/gallery';
 import Video from '../components/video';

@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        'pgl-blue': '#009FE3'
+        'pgl-blue': '#017CC2'
       },
       height: {
         hero: '12rem',

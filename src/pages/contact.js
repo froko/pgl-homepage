@@ -11,7 +11,7 @@ const Contact = () => {
   const FullFormField = tw.div`w-full px-3`;
   const Label = tw.label`block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2`;
   const Input = tw.input`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none`;
-  const Button = tw.button`bg-blue-500 hover:bg-blue-700 text-white font-bold my-4 py-2 px-4 rounded focus:outline-none`;
+  const Button = tw.button`bg-blue-500 hover:bg-blue-800 text-white font-bold my-4 py-2 px-4 rounded focus:outline-none`;
 
   return (
     <Section id="contact">
