@@ -19,7 +19,7 @@ const getDimensions = (ele) => {
 };
 
 const Layout = ({ children }) => {
-  const [isTransperant, setTransperant] = useState(true);
+  const [isTransparent, setTransparent] = useState(true);
 
   const PageContainer = tw.div`min-h-screen overflow-y-auto overflow-x-hidden`;
   const Content = tw.div``;
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     const { height: heroHeight } = getDimensions(heroRef.current);
     const scrollPosition = window.scrollY + 80;
 
-    setTransperant(scrollPosition < heroHeight);
+    setTransparent(scrollPosition < heroHeight);
   };
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <PageContainer>
         <div className="bg-hero-pattern bg-fixed bg-full-width bg-no-repeat">
-          <Header isTransperant={isTransperant} />
+          <Header isTransparent={isTransparent} />
           <Hero heroRef={heroRef} />
           <Content>{children}</Content>
         </div>

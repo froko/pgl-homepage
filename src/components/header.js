@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import MobileNavigation from './navigation/mobile';
 import Hamburger from './navigation/hamburger';
 
-const Header = ({ isTransperant }) => {
+const Header = ({ isTransparent }) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const StickyFlexBox = tw(
@@ -50,7 +50,7 @@ const Header = ({ isTransperant }) => {
   `);
 
   return (
-    <StickyFlexBox animate={isTransperant ? 'hero' : 'content'} variants={variants}>
+    <StickyFlexBox animate={isTransparent ? 'hero' : 'content'} variants={variants}>
       <StaticImage
         src="../images/header-bright.png"
         alt="lettering-header"
