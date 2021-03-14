@@ -59,6 +59,7 @@ const Overlay = ({ children, isOpen, setIsOpen }) => {
 
   useEffect(() => {
     document.querySelectorAll('body, html').forEach((e) => e.classList[isOpen ? 'add' : 'remove']('overflow-hidden'));
+    return () => {};
   }, [isOpen]);
 
   return (
