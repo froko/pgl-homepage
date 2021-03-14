@@ -24,7 +24,6 @@
     "deploy": "node deploy.js"
   },
   "dependencies": {
-    "@browniebroke/gatsby-image-gallery": "^4.1.1",
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@contentful/rich-text-types": "^14.1.2",
     "@emotion/react": "^11.1.5",
