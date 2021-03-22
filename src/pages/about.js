@@ -22,7 +22,12 @@ const Portrait = (props) => {
       <div>
         <Name>{name}</Name>
         <Info>{funktion}</Info>
-        <Info>Eintrittsjahr: {eintrittsjahr}</Info>
+        if (eintrittsjahr) {
+          <Info>Anwärter</Info>
+        } else {
+          <Info>Eintrittsjahr: {eintrittsjahr}</Info>
+        }
+        
       </div>
     </Card>
   );
