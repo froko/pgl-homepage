@@ -1,6 +1,5 @@
 import React from 'react';
-import { navigate } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { goBack } from 'gatsby';
 import tw, { GlobalStyles } from 'twin.macro';
 
 import '../styles/style.css';
