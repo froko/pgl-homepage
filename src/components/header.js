@@ -40,7 +40,7 @@ const Header = ({ shopingBasket }) => {
         src="../images/header.png"
         alt="lettering-header"
         layout="constrained"
-        height={32}
+        height={36}
         className="mr-4"
       />
       <div className="flex-grow" />
