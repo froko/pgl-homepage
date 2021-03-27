@@ -13,12 +13,11 @@ const CompactDisc = ({ title, year, price, addToBasket, children }) => {
   const BlueBanner = tw.div`p-2 w-full flex bg-pgl-blue text-gray-100 font-bold`;
   const Spacer = tw.div`flex-1`;
   const Title = tw.span``;
-  const Price = tw.span``;
+  const Price = tw.span`mr-4`;
   const BasketText = tw.span`hidden md:block`;
   const ProductView = tw.div`mx-2 md:mx-0 md:flex pt-2`;
 
   const handleClick = (e) => {
-    console.log(e);
     e.preventDefault();
     addToBasket({ article: title, price });
   };
@@ -31,7 +30,6 @@ const CompactDisc = ({ title, year, price, addToBasket, children }) => {
         </Title>
         <Spacer />
         <Price>CHF {price.toFixed(2)}</Price>
-        <Spacer></Spacer>
         <button className="flex" onClick={handleClick}>
           <BasketImage />
           <BasketText>In den Warenkorb</BasketText>

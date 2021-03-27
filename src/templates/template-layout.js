@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <PageContainer>
-        <Header />
+        <Header shopingBasket={[]} />
         <div className="relative container mx-auto mt-20 h-72 border-b border-pgl-blue">
           <button
             type="button"

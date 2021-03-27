@@ -42,7 +42,7 @@ const Media = () => {
   `);
 
   return (
-    <BlueBackground id="media" title="Ton &amp; Bild">
+    <BlueBackground id="media" title="Fasi Archiv">
       <FlexBox>
         {media.nodes.map((node) => (
           <MediaCard {...node} key={node.id} />
