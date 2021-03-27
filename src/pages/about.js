@@ -3,8 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
-import DiagonalHeader from '../components/diagonal-header';
-import { Container, LightGray, PglBlue, Section } from '../components/styles';
+import { WhiteBackground } from '../components/styles';
 
 const Portrait = (props) => {
   const { name, eintrittsjahr, funktion, portrait } = props;
@@ -74,56 +73,53 @@ const About = () => {
   const baesse = data.mitglieder.edges.filter(({ node }) => node.instrument === 'Bass').sort(byName);
 
   return (
-    <Section id="about">
-      <DiagonalHeader color={LightGray} background={PglBlue} title="Über uns" />
-      <Container>
-        <FlexBox>
-          {majoren.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {cinellen.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {drums.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {pauken.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {lyras.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {klarinetten.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {trompeten.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {posaunen.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-        <FlexBox>
-          {baesse.map(({ node }) => (
-            <Portrait {...node} key={node.id} />
-          ))}
-        </FlexBox>
-      </Container>
-    </Section>
+    <WhiteBackground id="about" title="Über uns">
+      <FlexBox>
+        {majoren.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {cinellen.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {drums.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {pauken.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {lyras.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {klarinetten.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {trompeten.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {posaunen.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+      <FlexBox>
+        {baesse.map(({ node }) => (
+          <Portrait {...node} key={node.id} />
+        ))}
+      </FlexBox>
+    </WhiteBackground>
   );
 };
 

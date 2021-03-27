@@ -1,11 +1,36 @@
+import React from 'react';
 import tw from 'twin.macro';
 
-export const LightGray = '#f3f4f6';
-export const PglBlue = '#017CC2';
+import '../styles/style.css';
 
-export const Section = tw.div`w-full bg-gray-100`;
-export const Title = tw.h1`w-full h-12 py-2 bg-gray-800 rounded-t-md text-gray-100 w-full text-center text-2xl font-bold`;
+export const Parallax = ({ children }) => {
+  return <div className="parallax">{children}</div>;
+};
 
-export const BlueBackground = tw.div`bg-pgl-blue`;
-export const FlexBox = tw.div`flex flex-wrap`;
-export const Container = tw.div`container mx-auto`;
+const Section = tw.div`w-full py-8 `;
+const Title = tw.h1`text-4xl text-center font-bold`;
+const Container = tw.div`container mx-auto mt-4`;
+
+export const WhiteBackground = ({ id, title, children }) => {
+  const WhiteSection = tw(Section)`bg-white bg-opacity-90`;
+  const BlueTitle = tw(Title)`text-pgl-blue`;
+
+  return (
+    <WhiteSection id={id}>
+      <BlueTitle>{title}</BlueTitle>
+      <Container>{children}</Container>
+    </WhiteSection>
+  );
+};
+
+export const BlueBackground = ({ id, title, children }) => {
+  const BlueSection = tw(Section)`bg-pgl-blue bg-opacity-90`;
+  const WhiteTitle = tw(Title)`text-white`;
+
+  return (
+    <BlueSection id={id}>
+      <WhiteTitle>{title}</WhiteTitle>
+      <Container>{children}</Container>
+    </BlueSection>
+  );
+};

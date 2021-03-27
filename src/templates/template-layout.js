@@ -3,7 +3,6 @@ import { navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import tw, { GlobalStyles } from 'twin.macro';
 
-import 'typeface-inter';
 import '../styles/style.css';
 import Header from '../components/header';
 

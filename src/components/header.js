@@ -4,36 +4,21 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
-import { motion } from 'framer-motion';
-
 import MobileNavigation from './navigation/mobile';
 import Hamburger from './navigation/hamburger';
 
-const Header = ({ isTransparent }) => {
+const BasketImage = () => {
+  return <StaticImage src="../images/basket-black.png" alt="basket" layout="constrained" width={24} className="mr-4" />;
+};
+
+const Header = ({ shopingBasket }) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  const StickyFlexBox = tw(
-    motion.div
-  )`fixed w-full top-0 flex justify-between items-center z-10 h-16 p-4 opacity-0 bg-pgl-blue shadow-md`;
-
-  const variants = {
-    hero: {
-      opacity: 0,
-      transition: {
-        delay: 0.1,
-        duration: 0.5,
-        type: 'tween'
-      }
-    },
-    content: {
-      opacity: 1,
-      transition: {
-        delay: 0.3,
-        duration: 0.5,
-        type: 'tween'
-      }
-    }
-  };
+  const StickyFlexBox = tw.div`fixed w-full top-0 flex justify-between items-center z-10 h-16 p-4 bg-white shadow-md`;
+  let basket;
+  if (shopingBasket.length > 0) {
+    basket = <BasketImage />;
+  }
 
   const { site } = useStaticQuery(graphql`
     query {
@@ -50,15 +35,16 @@ const Header = ({ isTransparent }) => {
   `);
 
   return (
-    <StickyFlexBox animate={isTransparent ? 'hero' : 'content'} variants={variants}>
+    <StickyFlexBox>
       <StaticImage
-        src="../images/header-bright.png"
+        src="../images/header.png"
         alt="lettering-header"
         layout="constrained"
         height={32}
         className="mr-4"
       />
       <div className="flex-grow" />
+      {basket}
       <MobileNavigation links={site.data.navigation} isOpen={mobileNavOpen} setIsOpen={setMobileNavOpen} />
       <Hamburger setIsOpen={setMobileNavOpen} />
     </StickyFlexBox>

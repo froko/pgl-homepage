@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
-import { Container, Section } from '../components/styles';
+import { WhiteBackground } from '../components/styles';
 
 const NewsCard = (props) => {
   const { id, slug, titel, vorschaubild } = props;
@@ -35,7 +35,6 @@ const NewsCard = (props) => {
 const News = () => {
   const Grid = tw.div`grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch pb-4`;
   const NewsCardContainer = tw.div`h-full w-full p-1`;
-  const Title = tw.h2`text-pgl-blue text-6xl text-center font-bold pt-28`;
 
   const data = useStaticQuery(graphql`
     query NewsQuery {
@@ -60,18 +59,15 @@ const News = () => {
   `);
 
   return (
-    <Section id="news">
-      <Container>
-        <Title>News</Title>
-        <Grid className="pt-8">
-          {data.news.edges.map(({ node }) => (
-            <NewsCardContainer key={node.id}>
-              <NewsCard {...node} />
-            </NewsCardContainer>
-          ))}
-        </Grid>
-      </Container>
-    </Section>
+    <WhiteBackground id="news" title="News">
+      <Grid className="pt-8">
+        {data.news.edges.map(({ node }) => (
+          <NewsCardContainer key={node.id}>
+            <NewsCard {...node} />
+          </NewsCardContainer>
+        ))}
+      </Grid>
+    </WhiteBackground>
   );
 };
 

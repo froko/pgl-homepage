@@ -1,8 +1,7 @@
 import React from 'react';
 import tw from 'twin.macro';
 
-import DiagonalHeader from '../components/diagonal-header';
-import { BlueBackground, Container, LightGray, PglBlue, Section } from '../components/styles';
+import { BlueBackground } from '../components/styles';
 
 const Contact = () => {
   const Form = tw.form`w-full max-w-lg`;
@@ -14,30 +13,25 @@ const Contact = () => {
   const Button = tw.button`bg-blue-500 hover:bg-blue-800 text-white font-bold my-4 py-2 px-4 rounded focus:outline-none`;
 
   return (
-    <Section id="contact">
-      <DiagonalHeader color={PglBlue} background={LightGray} title="Kontakt" />
-      <BlueBackground>
-        <Container>
-          <Form action="https://getform.io/f/5db4d203-9a89-479f-a9e5-26c6974bbd50" method="POST">
-            <FlexWrap>
-              <HalfFormField>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email"></Input>
-              </HalfFormField>
-              <HalfFormField>
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" type="text"></Input>
-              </HalfFormField>
-              <FullFormField>
-                <Label htmlFor="message">Nachricht</Label>
-                <Input id="message" name="message" type="text"></Input>
-              </FullFormField>
-              <Button type="submit">Senden</Button>
-            </FlexWrap>
-          </Form>
-        </Container>
-      </BlueBackground>
-    </Section>
+    <BlueBackground id="contact" title="Kontakt">
+      <Form action="https://getform.io/f/5db4d203-9a89-479f-a9e5-26c6974bbd50" method="POST">
+        <FlexWrap>
+          <HalfFormField>
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" name="email" type="email"></Input>
+          </HalfFormField>
+          <HalfFormField>
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" name="name" type="text"></Input>
+          </HalfFormField>
+          <FullFormField>
+            <Label htmlFor="message">Nachricht</Label>
+            <Input id="message" name="message" type="text"></Input>
+          </FullFormField>
+          <Button type="submit">Senden</Button>
+        </FlexWrap>
+      </Form>
+    </BlueBackground>
   );
 };
 
