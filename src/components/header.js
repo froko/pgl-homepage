@@ -16,7 +16,7 @@ const Header = ({ shopingBasket }) => {
 
   const StickyFlexBox = tw.div`fixed w-full top-0 flex justify-between items-center z-10 h-16 p-4 bg-white shadow-md`;
   let basket;
-  if (shopingBasket.length > 0) {
+  if (shopingBasket?.length > 0) {
     basket = <BasketImage />;
   }
 
