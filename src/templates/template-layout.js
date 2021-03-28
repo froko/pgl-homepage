@@ -14,7 +14,7 @@ const Layout = ({ url, children }) => {
       <GlobalStyles />
       <PageContainer>
         <Header shopingBasket={[]} />
-        <div className="relative container mx-auto mt-20 h-72 border-b border-pgl-blue">
+        <div className="relative container mx-auto mt-20 h-16 border-b border-pgl-blue">
           <button
             type="button"
             onClick={() => navigate(url)}

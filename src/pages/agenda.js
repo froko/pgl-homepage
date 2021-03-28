@@ -6,6 +6,8 @@ import { BlueBackground } from '../components/styles';
 const Agenda = () => {
   const EventContainer = tw.div`p-4 text-center`;
   const Event = tw.h2`text-white text-xl font-bold`;
+  const Datum = tw.p`text-white`;
+  const Location = tw.p`text-white`;
 
   return (
     <BlueBackground id="agenda" title="Agenda">
