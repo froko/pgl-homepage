@@ -1,21 +1,14 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
 import { BlueBackground } from '../components/styles';
 
 const Info = () => {
-  const Text = tw.p`text-white ml-8`;
+  const Text = tw.p`text-white mx-2`;
   return (
     <BlueBackground id="info" title="Aktuelles">
       <div className="flex">
-        <StaticImage
-          src="../images/mitgliedersuche.jpg"
-          alt="mitgliedersuche"
-          layout="constrained"
-          width={120}
-          className="hidden lg:block rounded-full"
-        />
+        <div className="flex-1" />
         <Text>
           <b className="font-bold">Du möchtest gerne bei den PGL mitmachen?</b>
           <br />
@@ -26,6 +19,7 @@ const Info = () => {
           <br />
           Zum Kontaktformular.
         </Text>
+        <div className="flex-1" />
       </div>
     </BlueBackground>
   );
