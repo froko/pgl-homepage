@@ -14,7 +14,7 @@ const BasketImage = () => {
 const Header = ({ shopingBasket }) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  const StickyFlexBox = tw.div`fixed w-full top-0 flex justify-between items-center z-10 h-16 p-4 bg-white shadow-md`;
+  const StickyFlexBox = tw.div`fixed w-full top-0 flex justify-between items-center z-10 h-16 md:h-20 px-4 py-1 bg-white shadow-md`;
   let basket;
   if (shopingBasket?.length > 0) {
     basket = <BasketImage />;
@@ -36,6 +36,13 @@ const Header = ({ shopingBasket }) => {
 
   return (
     <StickyFlexBox>
+      <StaticImage
+        src="../images/logo.png"
+        alt="logo"
+        layout="constrained"
+        height={64}
+        className="hidden md:block mr-4"
+      />
       <StaticImage
         src="../images/header.png"
         alt="lettering-header"
