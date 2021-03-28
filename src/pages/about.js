@@ -14,6 +14,13 @@ const Portrait = (props) => {
 
   const image = getImage(portrait);
 
+  let info;
+  if (eintrittsjahr) {
+    info = <Info>Eintrittsjahr: {eintrittsjahr}</Info>
+  } else {
+    info = <Info>Anwärter</Info>
+  }
+
   return (
     <Card>
       <div>
@@ -22,12 +29,7 @@ const Portrait = (props) => {
       <div>
         <Name>{name}</Name>
         <Info>{funktion}</Info>
-        if (eintrittsjahr) {
-          <Info>Anwärter</Info>
-        } else {
-          <Info>Eintrittsjahr: {eintrittsjahr}</Info>
-        }
-        
+        {info}
       </div>
     </Card>
   );
