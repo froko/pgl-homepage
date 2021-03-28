@@ -17,7 +17,7 @@ const GalleryItem = (props) => {
   const Spacer = tw.div`mb-4`;
 
   return (
-    <Layout>
+    <Layout url="/#media">
       <SEO title={props.data.item.titel} />
       <div className="bg-gray-100">
         <Container>

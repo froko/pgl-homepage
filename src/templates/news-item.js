@@ -33,7 +33,7 @@ const NewsItem = (props) => {
   };
 
   return (
-    <Layout>
+    <Layout url="/#news">
       <SEO title={titel} />
       <Background>
         <Container>
