@@ -5,6 +5,7 @@ import SEO from '../components/seo';
 import { Parallax } from '../components/styles';
 
 import Hero from './hero';
+import Info from './info';
 import News from './news';
 import Agenda from './agenda';
 import About from './about';
@@ -20,6 +21,7 @@ const Home = () => {
       <SEO title="PGL" />
       <Hero />
       <Parallax>
+        <Info />
         <News />
         <Agenda />
         <About />
