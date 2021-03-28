@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
@@ -36,20 +37,24 @@ const Header = ({ shopingBasket }) => {
 
   return (
     <StickyFlexBox>
-      <StaticImage
-        src="../images/logo.png"
-        alt="logo"
-        layout="constrained"
-        height={64}
-        className="hidden md:block mr-4"
-      />
-      <StaticImage
-        src="../images/header.png"
-        alt="lettering-header"
-        layout="constrained"
-        height={36}
-        className="mr-4"
-      />
+      <AnchorLink to="/#hero">
+        <StaticImage
+          src="../images/logo.png"
+          alt="logo"
+          layout="constrained"
+          height={64}
+          className="hidden md:block mr-4"
+        />
+      </AnchorLink>
+      <AnchorLink to="/#hero">
+        <StaticImage
+          src="../images/header.png"
+          alt="lettering-header"
+          layout="constrained"
+          height={36}
+          className="mr-4"
+        />
+      </AnchorLink>
       <div className="flex-grow" />
       {basket}
       <MobileNavigation links={site.data.navigation} isOpen={mobileNavOpen} setIsOpen={setMobileNavOpen} />

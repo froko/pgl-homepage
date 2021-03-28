@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <>
       <Parallax>
-        <FullScreenContainer>
+        <FullScreenContainer id="hero">
           <ImageContainer>
             <StaticImage
               src="../images/hero.png"
