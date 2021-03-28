@@ -28,7 +28,7 @@ const Media = () => {
 
   const { media } = useStaticQuery(graphql`
     query MediaQuery {
-      media: allContentfulMedia {
+      media: allContentfulMedia(sort: { fields: [titel], order: DESC }) {
         nodes {
           id
           titel
