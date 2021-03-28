@@ -14,7 +14,7 @@ const Info = () => {
           alt="mitgliedersuche"
           layout="constrained"
           width={120}
-          className="hidden md:block rounded-full"
+          className="hidden lg:block rounded-full"
         />
         <Text>
           <b className="font-bold">Du möchtest gerne bei den PGL mitmachen?</b>

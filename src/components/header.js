@@ -43,7 +43,7 @@ const Header = ({ shopingBasket }) => {
           alt="logo"
           layout="constrained"
           height={64}
-          className="hidden md:block mr-4"
+          className="hidden lg:block mr-4"
         />
       </AnchorLink>
       <AnchorLink to="/#hero">
