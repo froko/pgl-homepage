@@ -160,7 +160,7 @@ const About = () => {
         Noldi Torricelli
         Fritz Winteler
 
-        Wir sind Mirglied der "Vereinigte" seit deren Gründung im Jahr 1964.
+        Wir sind Mitglied der "Vereinigte" seit deren Gründung im Jahr 1964.
 
         Der aktuelle Vorstand besteht aus
         Beat Thalmann - Präsident 
@@ -182,7 +182,7 @@ const About = () => {
 
       <Fliesstext title="Götticlub">
         Sie haben ihr Instrument zwar an den berühmten Nagel gehängt, dennoch bleiben ehemalige Mitglieder eng mit den
-        PGL verbunden. Im von Turi Balzarini und Fritz Winteler ins Leben gerufenen Götticlub kann Mitglied werden, wer
+        PGL verbunden. Im 2003 von Turi Balzarini und Fritz Winteler ins Leben gerufenen Götticlub kann Mitglied werden, wer
         mindestens fünf Jahre lang aktiver Pilatusgeist war. Im Götticlub pflegen sie weiterhin die Freundschaft und
         unterstützen die aktiven Pilatusgeister in vielen Belangen. Der traditionelle Göttibatzen ist jedes Jahr ein
         willkommener Zustupf in die PGL-Kasse. Übergeben wird er jeweils am PGL-Ausflug, an dem die meisten Göttis jedes
@@ -192,11 +192,9 @@ const About = () => {
         Kapellplatz. Dort servieren sie den zahlreichen PGL-Fans und -Aktivmitgliedern Campari Orange, Cüpli, Bier und
         heisse Bouillon und beweisen damit auf ihre typische Art, dass Harmonie bei den PGL weit übers
         guggenmusikalische hinausgeht.
+      </Fliesstext>
 
-        Gegründet wurde der PGL Götticlub 2003 durch Turi Balzarini und Fritz Winteler.
-
-        Mitglieder (nach Eintrittsjahr)
-
+      <Fliesstext title="Götticlub-Mitglieder (nach Eintrittsjahr)">
         Rolf Albisser, Renato Amado, Erwin "Wini" Bächler, Peter Bachmann, Turi Balzarini, Walter Burckhard (†), Peter Fleischli,
         Erich Hunkeler, Remo Moor, Hans Odermatt, Anton A. Oetterli (†), Hugo "Stöge" Stocker, Arnold "Noldi" Torricelli,
         Charles "Charly" Vögeli (†), Fritz Winteler, Hans-Ruedi Zai (Fahnengötti), Bruno Piemontesi, Beat Stauffer, Tobias Widmer,
