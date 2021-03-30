@@ -21,7 +21,7 @@ const Hero = () => {
               width={400}
               className="mx-4"
             />
-            <SubTitle>Tradition. Schunkeln. Röcke.</SubTitle>
+            <SubTitle>Fasnacht im Herzen.</SubTitle>
             <SubTitle>Seit 1961.</SubTitle>
           </ImageContainer>
         </FullScreenContainer>
