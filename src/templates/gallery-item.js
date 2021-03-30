@@ -48,7 +48,7 @@ export const query = graphql`
       bilder {
         id
         title
-        thumb: gatsbyImageData(width: 300, height: 300)
+        thumb: gatsbyImageData(quality: 80, width: 300, height: 300)
         file {
           url
           fileName

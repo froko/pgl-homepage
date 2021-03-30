@@ -41,7 +41,7 @@ const Fliesstext = ({ title, children }) => {
 const Portrait = (props) => {
   const { name, eintrittsjahr, portrait } = props;
 
-  const Card = tw.div`w-24 md:w-44 flex flex-col items-center m-2`;
+  const Card = tw.div`w-24 md:w-36 flex flex-col items-center m-2`;
   const Name = tw.h2`text-xs md:text-base text-pgl-blue text-center font-bold`;
   const Info = tw.p`text-xs md:text-base text-center text-gray-700`;
 
@@ -107,7 +107,7 @@ const About = () => {
             eintrittsjahr
             funktion
             portrait {
-              gatsbyImageData(width: 140, height: 140)
+              gatsbyImageData(quality: 80, width: 220, height: 220)
             }
           }
         }

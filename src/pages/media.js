@@ -34,7 +34,7 @@ const Media = () => {
           titel
           slug
           vorschaubild {
-            gatsbyImageData(width: 200, height: 200)
+            gatsbyImageData(quality: 80, height: 220, width: 220)
           }
         }
       }

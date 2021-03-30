@@ -73,7 +73,7 @@ export const query = graphql`
       bilder {
         id
         title
-        gatsbyImageData(layout: FIXED, height: 270)
+        gatsbyImageData(layout: FIXED, quality: 80, height: 270)
       }
     }
   }
