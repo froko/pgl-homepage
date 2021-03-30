@@ -131,8 +131,8 @@ const About = () => {
         Seit 1961 sind die Pilatusgeister fester Bestandteil der Lozärner Fasnacht. Und wo immer sie sind, ist
         Schunkelstimmung angesagt. Die Klänge der PGL, so das Kürzel der Pilatusgeister Luzern, zielen mitten ins Herz.
         Melodien von Evergreens, Oberkrainer- und Tessinermusik, südamerikanische Rhythmen, klassische Ohrwürmer,
-        aktuelle Hits und ab und zu ein figulanter Marsch füllen den musikalischen Köcher der PGL. Das Repertoire
-        umfasst mittlerweile weit über 100 Titel. Viele davon sind auf Tonträgern verewigt. Ob Polka oder Tango, Walzer
+        aktuelle Hits und ab und zu ein figulanter Marsch füllen den musikalischen Köcher der PGL. 
+        Viele dieser Titel sind auf Tonträgern verewigt. Ob Polka oder Tango, Walzer
         oder Sirtaki – Vielfalt hat bei den Pilatusgeistern Tradition. Und manch anderes auch noch. <br /> <br /> Die
         PGL-Matinées, die jeweils an den beiden Samstagen vor der Fasnacht im Stadtkeller über die Bühne gehen, sind
         legendär. Nicht wenige der Besucher*innen stehen schon morgens um fünf Uhr (!) vor der Stadtkeller-Tür, um sich
@@ -150,6 +150,24 @@ const About = () => {
         Dreivierteltakt. Und jene der vielen Zuhörerinen und Zuhörer meistens etwas höher. Und überhaupt: Die PGL und
         ihre Fans mögen, lieben und pflegen die Harmonie. Dass dem so ist, beweist auch die Tatsache, dass die
         Pilatusgeister in ihrer 60-jährigen Vereinsgeschichte erst den dritten Präsidenten haben.
+      </Fliesstext>
+
+      <Fliesstext title="PGL Facts in Kürze">
+        Die Pilatusgeister sind eine der wenigen klassischen Männermusigen Luzerns.
+        Gegründet wurden die Pilatusgeister Luzern 1961 von
+        Heinz Gloor
+        Sigi Widmer
+        Noldi Torricelli
+        Fritz Winteler
+
+        Wir sind Mirglied der "Vereinigte" seit deren Gründung im Jahr 1964.
+
+        Der aktuelle Vorstand besteht aus
+        Beat Thalmann - Präsident 
+        Andi Felber - Tambourmajor und Vize-Präsident
+        Markus Helfenstein - Kassier
+        Manuel Brun - Beisitzer
+        René Sidler - Aktuar
       </Fliesstext>
 
       <Register title="Tambourmajor" mitglieder={majoren} />
@@ -174,6 +192,17 @@ const About = () => {
         Kapellplatz. Dort servieren sie den zahlreichen PGL-Fans und -Aktivmitgliedern Campari Orange, Cüpli, Bier und
         heisse Bouillon und beweisen damit auf ihre typische Art, dass Harmonie bei den PGL weit übers
         guggenmusikalische hinausgeht.
+
+        Gegründet wurde der PGL Götticlub 2003 durch Turi Balzarini und Fritz Winteler.
+
+        Mitglieder (nach Eintrittsjahr)
+
+        Rolf Albisser, Renato Amado, Erwin "Wini" Bächler, Peter Bachmann, Turi Balzarini, Walter Burckhard (†), Peter Fleischli,
+        Erich Hunkeler, Remo Moor, Hans Odermatt, Anton A. Oetterli (†), Hugo "Stöge" Stocker, Arnold "Noldi" Torricelli,
+        Charles "Charly" Vögeli (†), Fritz Winteler, Hans-Ruedi Zai (Fahnengötti), Bruno Piemontesi, Beat Stauffer, Tobias Widmer,
+        Renato Bertelle (†), Armin "Büsu" Suppiger, Thomas Träger, Ceo Benedetti, Christoph Träger, Hansruedi Jossi,
+        Beat "Möpsu" Kunz, Albert "Bärti" Felber (†), Andy Bühlmann, Kurt Maurer, Othmar Schütz, Hans Fleischli, Patrick Kunz,
+        Daniel Renggli, Daniel Haas
       </Fliesstext>
     </WhiteBackground>
   );
