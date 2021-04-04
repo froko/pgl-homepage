@@ -11,16 +11,14 @@ const menuItem = {
     transition: {
       delay: 0,
       duration: 0
-    },
-    x: -20
+    }
   },
   open: (key) => ({
     opacity: 1,
     transition: {
       delay: 0.25 + key * 0.1,
       type: 'tween'
-    },
-    x: 0
+    }
   })
 };
 
