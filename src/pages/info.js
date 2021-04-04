@@ -1,26 +1,23 @@
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
 import { BlueBackground } from '../components/styles';
 
 const Info = () => {
-  const Text = tw.p`text-white mx-2`;
+  const Flex = tw.div`flex`;
+  const FlexGrow = tw.div`flex-1`;
+  const Text = tw.p`text-white text-center font-bold mx-2 `;
+
   return (
-    <BlueBackground id="info" title="Aktuelles">
-      <div className="flex">
-        <div className="flex-1" />
-        <Text>
-          <b className="font-bold">Du möchtest gerne bei den PGL mitmachen?</b>
-          <br />
-          Dann zögere nicht und wende dich via Kontaktformular direkt an uns.
-          <br />
-          Das musikalische Gremium wird sich mit dir in Verbindung setzen.
-          <br />
-          <br />
-          Zum Kontaktformular.
-        </Text>
-        <div className="flex-1" />
-      </div>
+    <BlueBackground>
+      <Flex>
+        <StaticImage src="../images/jubilaeum.jpeg" alt="jubilaeum" width={150} className="rounded-full ml-2" />
+        <FlexGrow />
+        <Text>Wir jubilieren! 60 Jahre Pilatusgeister Luzern!</Text>
+        <FlexGrow />
+        <StaticImage src="../images/jubilaeum.jpeg" alt="jubilaeum" width={150} className="rounded-full mr-2" />
+      </Flex>
     </BlueBackground>
   );
 };

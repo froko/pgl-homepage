@@ -13,7 +13,6 @@ module.exports = {
     author: '@froko',
     locale: 'de',
     navigation: [
-      { name: 'Aktuelles', to: '/#info' },
       { name: 'News', to: '/#news' },
       { name: 'Agenda', to: '/#agenda' },
       { name: 'Über uns', to: '/#about' },
