@@ -7,7 +7,7 @@ import { BlueBackground } from '../components/styles';
 const Info = () => {
   const Flex = tw.div`flex`;
   const FlexGrow = tw.div`flex-1`;
-  const Text = tw.p`text-white text-center font-bold mx-2 `;
+  const Text = tw.p`text-white text-center font-bold mx-2 md:text-2xl`;
 
   return (
     <BlueBackground>

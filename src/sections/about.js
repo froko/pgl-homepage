@@ -8,8 +8,8 @@ import { WhiteBackground } from '../components/styles';
 
 const Title = tw.h3`text-pgl-blue text-xl font-bold text-center border-b border-pgl-blue mx-2 mb-2`;
 
-const Fliesstext = ({ title, children }) => {
-  const Background = tw.div`bg-white mt-4 py-4 mx-2 md:mx-0`;
+const FliesstextMitSpalten = ({ title, children }) => {
+  const Background = tw.div`bg-white mt-4 px-2 py-4 mx-2 md:mx-0`;
   const Paragraph = styled.p`
     background-color: white;
     padding: 0.5rem;
@@ -29,6 +29,18 @@ const Fliesstext = ({ title, children }) => {
       text-align: justify;
     }
   `;
+
+  return (
+    <Background>
+      <Title>{title}</Title>
+      <Paragraph>{children}</Paragraph>
+    </Background>
+  );
+};
+
+const Fliesstext = ({ title, children }) => {
+  const Background = tw.div`bg-white mt-4 px-2 md:px-4 py-4 mx-2 md:mx-0`;
+  const Paragraph = styled.p``;
 
   return (
     <Background>
@@ -120,47 +132,45 @@ const About = () => {
 
   return (
     <WhiteBackground id="about" title="Über uns">
-      <Fliesstext title="Fasnacht im Herzen. Seit 1961.">
+      <FliesstextMitSpalten title="Fasnacht im Herzen. Seit 1961.">
         Seit 1961 sind die Pilatusgeister fester Bestandteil der Lozärner Fasnacht. Und wo immer sie sind, ist
         Schunkelstimmung angesagt. Die Klänge der PGL, so das Kürzel der Pilatusgeister Luzern, zielen mitten ins Herz.
         Melodien von Evergreens, Oberkrainer- und Tessinermusik, südamerikanische Rhythmen, klassische Ohrwürmer,
-        aktuelle Hits und ab und zu ein figulanter Marsch füllen den musikalischen Köcher der PGL. 
-        Viele dieser Titel sind auf Tonträgern verewigt. Ob Polka oder Tango, Walzer
-        oder Sirtaki – Vielfalt hat bei den Pilatusgeistern Tradition. Und manch anderes auch noch. <br /> <br /> Die
-        PGL-Matinées, die jeweils an den beiden Samstagen vor der Fasnacht im Stadtkeller über die Bühne gehen, sind
-        legendär. Nicht wenige der Besucher*innen stehen schon morgens um fünf Uhr (!) vor der Stadtkeller-Tür, um sich
-        einen guten Platz zu sichern. Ebenfalls im Stadtkeller findet der von den Pilatusgeistern initiierte und
-        organisierte Chöbu-Samschtig statt. Seit Jahren ist dieser Anlass fester Bestandteil in der Agenda
-        eingefleischter PGL-Fans. Ein ganz besonderes PGL-Schmankerl ist für Insider die offene Probe in der Bocciahalle
-        des FC Kickers. Am letzten Probemittwoch vor der Fasnacht sagen die PGL mit diesem Anlass ihrem Gastgeber
-        Dankeschön. Die Halle ist dabei jeweils zum Bersten voll. <br /> <br /> So traditionsreich wie die PGL-Anlässe
-        sind, so ursprünglich zeigt sich eine der ältesten Guggenmusigen Luzerns in ihrem Auftritt. Die Sujets werden
-        alljährlich von befreundeten Künstlern entworfen. Beim Basteln legen die Mitglieder selbst Hand an. Traditionell
-        kommt die reine Männermusig auch immer im klassischen Gewand mit Rock daher. Ab und zu hört man munkeln, dies
-        werde nur so beibehalten, weil die Röcke so schön schwingen, wenn die Pilatusgeister in ihrem typischen
-        Schunkelschritt daherkommen. Doch wer die PGL kennt, weiss: Die können einfach nicht anders. Denn wenn sie
-        einmal zu marschieren beginnen, dann schlagen die Herzen der begeisterten Mitglieder meistens im
-        Dreivierteltakt. Und jene der vielen Zuhörerinen und Zuhörer meistens etwas höher. Und überhaupt: Die PGL und
-        ihre Fans mögen, lieben und pflegen die Harmonie. Dass dem so ist, beweist auch die Tatsache, dass die
-        Pilatusgeister in ihrer 60-jährigen Vereinsgeschichte erst den dritten Präsidenten haben.
-      </Fliesstext>
+        aktuelle Hits und ab und zu ein figulanter Marsch füllen den musikalischen Köcher der PGL. Viele dieser Titel
+        sind auf Tonträgern verewigt. Ob Polka oder Tango, Walzer oder Sirtaki – Vielfalt hat bei den Pilatusgeistern
+        Tradition. Und manch anderes auch noch. <br /> <br /> Die PGL-Matinées, die jeweils an den beiden Samstagen vor
+        der Fasnacht im Stadtkeller über die Bühne gehen, sind legendär. Nicht wenige der Besucher*innen stehen schon
+        morgens um fünf Uhr (!) vor der Stadtkeller-Tür, um sich einen guten Platz zu sichern. Ebenfalls im Stadtkeller
+        findet der von den Pilatusgeistern initiierte und organisierte Chöbu-Samschtig statt. Seit Jahren ist dieser
+        Anlass fester Bestandteil in der Agenda eingefleischter PGL-Fans. Ein ganz besonderes PGL-Schmankerl ist für
+        Insider die offene Probe in der Bocciahalle des FC Kickers. Am letzten Probemittwoch vor der Fasnacht sagen die
+        PGL mit diesem Anlass ihrem Gastgeber Dankeschön. Die Halle ist dabei jeweils zum Bersten voll. <br /> <br /> So
+        traditionsreich wie die PGL-Anlässe sind, so ursprünglich zeigt sich eine der ältesten Guggenmusigen Luzerns in
+        ihrem Auftritt. Die Sujets werden alljährlich von befreundeten Künstlern entworfen. Beim Basteln legen die
+        Mitglieder selbst Hand an. Traditionell kommt die reine Männermusig auch immer im klassischen Gewand mit Rock
+        daher. Ab und zu hört man munkeln, dies werde nur so beibehalten, weil die Röcke so schön schwingen, wenn die
+        Pilatusgeister in ihrem typischen Schunkelschritt daherkommen. Doch wer die PGL kennt, weiss: Die können einfach
+        nicht anders. Denn wenn sie einmal zu marschieren beginnen, dann schlagen die Herzen der begeisterten Mitglieder
+        meistens im Dreivierteltakt. Und jene der vielen Zuhörerinen und Zuhörer meistens etwas höher. Und überhaupt:
+        Die PGL und ihre Fans mögen, lieben und pflegen die Harmonie. Dass dem so ist, beweist auch die Tatsache, dass
+        die Pilatusgeister in ihrer 60-jährigen Vereinsgeschichte erst den dritten Präsidenten haben.
+      </FliesstextMitSpalten>
 
       <Fliesstext title="PGL Facts in Kürze">
-        Die Pilatusgeister sind eine der wenigen klassischen Männermusigen Luzerns.
-        Gegründet wurden die Pilatusgeister Luzern 1961 von
-        Heinz Gloor
-        Sigi Widmer
-        Noldi Torricelli
-        Fritz Winteler
-
-        Wir sind Mitglied der "Vereinigte" seit deren Gründung im Jahr 1964.
-
-        Der aktuelle Vorstand besteht aus
-        Beat Thalmann - Präsident 
-        Andi Felber - Tambourmajor und Vize-Präsident
-        Markus Helfenstein - Kassier
-        Manuel Brun - Beisitzer
-        René Sidler - Aktuar
+        <p>Die Pilatusgeister sind eine der wenigen klassischen Männermusigen Luzerns.</p>
+        <p>
+          Gegründet wurden die Pilatusgeister Luzern 1961 von Heinz Gloor, Sigi Widmer, Noldi Torricelli und Fritz
+          Winteler.
+        </p>
+        <p>Wir sind Mitglied der "Vereinigte" seit deren Gründung im Jahr 1964.</p>
+        <p>Der aktuelle Vorstand besteht aus</p>
+        <ul>
+          <li>Beat Thalmann - Präsident,</li>
+          <li>Andi Felber - Tambourmajor und Vize-Präsident,</li>
+          <li>Markus Helfenstein - Kassier,</li>
+          <li>Manuel Brun - Beisitzer,</li>
+          <li>René Sidler - Aktuar</li>
+        </ul>
       </Fliesstext>
 
       <Register title="Tambourmajor" mitglieder={majoren} />
@@ -173,10 +183,10 @@ const About = () => {
       <Register title="Posaunen" mitglieder={posaunen} />
       <Register title="Bässe" mitglieder={baesse} />
 
-      <Fliesstext title="Götticlub">
+      <FliesstextMitSpalten title="Götticlub">
         Sie haben ihr Instrument zwar an den berühmten Nagel gehängt, dennoch bleiben ehemalige Mitglieder eng mit den
-        PGL verbunden. Im 2003 von Turi Balzarini und Fritz Winteler ins Leben gerufenen Götticlub kann Mitglied werden, wer
-        mindestens fünf Jahre lang aktiver Pilatusgeist war. Im Götticlub pflegen sie weiterhin die Freundschaft und
+        PGL verbunden. Im 2003 von Turi Balzarini und Fritz Winteler ins Leben gerufenen Götticlub kann Mitglied werden,
+        wer mindestens fünf Jahre lang aktiver Pilatusgeist war. Im Götticlub pflegen sie weiterhin die Freundschaft und
         unterstützen die aktiven Pilatusgeister in vielen Belangen. Der traditionelle Göttibatzen ist jedes Jahr ein
         willkommener Zustupf in die PGL-Kasse. Übergeben wird er jeweils am PGL-Ausflug, an dem die meisten Göttis jedes
         Jahr dabei sind. Viele von ihnen sind auch regelmässig an weiteren PGL-Anlässen mit dabei. An den PGL-Matineen
@@ -185,16 +195,16 @@ const About = () => {
         Kapellplatz. Dort servieren sie den zahlreichen PGL-Fans und -Aktivmitgliedern Campari Orange, Cüpli, Bier und
         heisse Bouillon und beweisen damit auf ihre typische Art, dass Harmonie bei den PGL weit übers
         guggenmusikalische hinausgeht.
-      </Fliesstext>
+      </FliesstextMitSpalten>
 
-      <Fliesstext title="Götticlub-Mitglieder (nach Eintrittsjahr)">
-        Rolf Albisser, Renato Amado, Erwin "Wini" Bächler, Peter Bachmann, Turi Balzarini, Walter Burckhard (†), Peter Fleischli,
-        Erich Hunkeler, Remo Moor, Hans Odermatt, Anton A. Oetterli (†), Hugo "Stöge" Stocker, Arnold "Noldi" Torricelli,
-        Charles "Charly" Vögeli (†), Fritz Winteler, Hans-Ruedi Zai (Fahnengötti), Bruno Piemontesi, Beat Stauffer, Tobias Widmer,
-        Renato Bertelle (†), Armin "Büsu" Suppiger, Thomas Träger, Ceo Benedetti, Christoph Träger, Hansruedi Jossi,
-        Beat "Möpsu" Kunz, Albert "Bärti" Felber (†), Andy Bühlmann, Kurt Maurer, Othmar Schütz, Hans Fleischli, Patrick Kunz,
-        Daniel Renggli, Daniel Haas
-      </Fliesstext>
+      <FliesstextMitSpalten title="Götticlub-Mitglieder (nach Eintrittsjahr)">
+        Rolf Albisser, Renato Amado, Erwin "Wini" Bächler, Peter Bachmann, Turi Balzarini, Walter Burckhard (†), Peter
+        Fleischli, Erich Hunkeler, Remo Moor, Hans Odermatt, Anton A. Oetterli (†), Hugo "Stöge" Stocker, Arnold "Noldi"
+        Torricelli, Charles "Charly" Vögeli (†), Fritz Winteler, Hans-Ruedi Zai (Fahnengötti), Bruno Piemontesi, Beat
+        Stauffer, Tobias Widmer, Renato Bertelle (†), Armin "Büsu" Suppiger, Thomas Träger, Ceo Benedetti, Christoph
+        Träger, Hansruedi Jossi, Beat "Möpsu" Kunz, Albert "Bärti" Felber (†), Andy Bühlmann, Kurt Maurer, Othmar
+        Schütz, Hans Fleischli, Patrick Kunz, Daniel Renggli, Daniel Haas
+      </FliesstextMitSpalten>
     </WhiteBackground>
   );
 };
