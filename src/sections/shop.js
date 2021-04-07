@@ -1,37 +1,54 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { FaShoppingBasket } from 'react-icons/fa';
 import tw from 'twin.macro';
 
 import { WhiteBackground } from '../components/styles';
 
-const BasketImage = () => {
-  return <StaticImage src="../images/basket-white.png" alt="basket" layout="fixed" width={20} className="mr-2" />;
-};
-
-const CompactDisc = ({ title, year, price, addToBasket, children }) => {
+const Pin = ({ article, price, addToBasket, children }) => {
   const Container = tw.div`pb-8`;
   const BlueBanner = tw.div`p-2 w-full flex bg-pgl-blue text-gray-100 font-bold`;
   const Spacer = tw.div`flex-1`;
   const Title = tw.span``;
-  const Price = tw.span`mr-4`;
+  const Price = tw.span`mr-6`;
+  const ShoppingBasket = tw(FaShoppingBasket)`h-5 w-auto mr-2`;
   const BasketText = tw.span`hidden md:block`;
   const ProductView = tw.div`mx-2 md:mx-0 md:flex pt-2`;
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    addToBasket({ article: title, price });
-  };
 
   return (
     <Container>
       <BlueBanner>
-        <Title>
-          {title} ({year})
-        </Title>
+        <Title>{article}</Title>
         <Spacer />
         <Price>CHF {price.toFixed(2)}</Price>
-        <button className="flex" onClick={handleClick}>
-          <BasketImage />
+        <button className="flex" onClick={() => addToBasket({ article, price })}>
+          <ShoppingBasket />
+          <BasketText>In den Warenkorb</BasketText>
+        </button>
+      </BlueBanner>
+      <ProductView>{children}</ProductView>
+    </Container>
+  );
+};
+
+const CompactDisc = ({ article, price, addToBasket, children }) => {
+  const Container = tw.div`pb-8`;
+  const BlueBanner = tw.div`p-2 w-full flex bg-pgl-blue text-gray-100 font-bold`;
+  const Spacer = tw.div`flex-1`;
+  const Title = tw.span``;
+  const Price = tw.span`mr-6`;
+  const ShoppingBasket = tw(FaShoppingBasket)`h-5 w-auto mr-2`;
+  const BasketText = tw.span`hidden md:block`;
+  const ProductView = tw.div`mx-2 md:mx-0 md:flex pt-2`;
+
+  return (
+    <Container>
+      <BlueBanner>
+        <Title>{article}</Title>
+        <Spacer />
+        <Price>CHF {price.toFixed(2)}</Price>
+        <button className="flex" onClick={() => addToBasket({ article, price })}>
+          <ShoppingBasket />
           <BasketText>In den Warenkorb</BasketText>
         </button>
       </BlueBanner>
@@ -41,13 +58,20 @@ const CompactDisc = ({ title, year, price, addToBasket, children }) => {
 };
 
 const ShopItems = ({ addToBasket }) => {
-  const TableOfContents = tw.div`md:ml-8`;
+  const TableOfContents = tw.div`bg-white w-full md:ml-4 pl-2`;
   const Song = tw.p``;
 
   return (
     <WhiteBackground id="shop" title="Shop">
-      <CompactDisc title="Halleluja" year="2016" price={30} addToBasket={(item) => addToBasket(item)}>
-        <StaticImage src="../images/halleluja.jpg" alt="halleluja" layout="constrained" width={450} />
+      <Pin article="PGL-Pin (limmitierte Auflage)" price={10} addToBasket={(item) => addToBasket(item)}>
+        <StaticImage src="../images/pgl-pin.jpg" alt="pin" height={300} />
+        <TableOfContents>
+          <Song>25 x 21 mm</Song>
+          <Song>Silber</Song>
+        </TableOfContents>
+      </Pin>
+      <CompactDisc article='CD "Halleluja" (2016)' price={30} addToBasket={(item) => addToBasket(item)}>
+        <StaticImage src="../images/halleluja.jpg" alt="halleluja" width={520} />
         <TableOfContents>
           <Song>01. Halleluja</Song>
           <Song>02. Mein Heimatland</Song>
@@ -69,8 +93,8 @@ const ShopItems = ({ addToBasket }) => {
           <Song>18. Das Spatzenlied</Song>
         </TableOfContents>
       </CompactDisc>
-      <CompactDisc title="Jubilatus" year="2011" price={30} addToBasket={(item) => addToBasket(item)}>
-        <StaticImage src="../images/jubilatus.jpg" alt="jubilatus" layout="constrained" width={450} />
+      <CompactDisc article='CD "Jubilatus" (2011)' price={30} addToBasket={(item) => addToBasket(item)}>
+        <StaticImage src="../images/jubilatus.jpg" alt="jubilatus" width={520} />
         <TableOfContents>
           <Song>01. Gruss an Bern</Song>
           <Song>02. Der alte Jäger</Song>
@@ -91,8 +115,8 @@ const ShopItems = ({ addToBasket }) => {
           <Song>17. Einen Stern</Song>
         </TableOfContents>
       </CompactDisc>
-      <CompactDisc title="Chianti" year="2006" price={30} addToBasket={(item) => addToBasket(item)}>
-        <StaticImage src="../images/chianti.jpg" alt="chianti" layout="constrained" width={450} />
+      <CompactDisc article='CD "Chianti" (2006)' price={30} addToBasket={(item) => addToBasket(item)}>
+        <StaticImage src="../images/chianti.jpg" alt="chianti" width={520} />
         <TableOfContents>
           <Song>01. Chianti Wein</Song>
           <Song>02. Alls was bruchsch esch Liebi</Song>

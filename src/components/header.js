@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
 import MobileNavigation from './navigation/mobile';
 import Hamburger from './navigation/hamburger';
+import ShoppingBasket from './navigation/basket';
 
-const BasketImage = () => {
-  return <StaticImage src="../images/basket-black.png" alt="basket" layout="constrained" width={24} className="mr-4" />;
-};
-
-const Header = ({ shopingBasket }) => {
+const Header = ({ basket }) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const StickyFlexBox = tw.div`fixed w-full top-0 flex justify-between items-center z-10 h-16 md:h-20 px-4 py-1 bg-white shadow-md`;
-  let basket;
-  if (shopingBasket?.length > 0) {
-    basket = <BasketImage />;
-  }
+  const Spacer = tw.div`flex-grow`;
 
   const { site } = useStaticQuery(graphql`
     query {
@@ -37,28 +30,12 @@ const Header = ({ shopingBasket }) => {
 
   return (
     <StickyFlexBox>
-      <AnchorLink to="/#hero">
-        <StaticImage
-          src="../images/logo.png"
-          alt="logo"
-          layout="constrained"
-          height={64}
-          className="hidden lg:block mr-4"
-        />
-      </AnchorLink>
-      <AnchorLink to="/#hero">
-        <StaticImage
-          src="../images/header.png"
-          alt="lettering-header"
-          layout="constrained"
-          height={36}
-          className="mr-4"
-        />
-      </AnchorLink>
-      <div className="flex-grow" />
-      {basket}
-      <MobileNavigation links={site.data.navigation} isOpen={mobileNavOpen} setIsOpen={setMobileNavOpen} />
+      <StaticImage src="../images/logo.png" alt="logo" height={64} className="hidden lg:block mr-4" />
+      <StaticImage src="../images/header.png" alt="header" height={36} className="mr-4" />
+      <Spacer />
+      <ShoppingBasket basket={basket} />
       <Hamburger setIsOpen={setMobileNavOpen} />
+      <MobileNavigation links={site.data.navigation} isOpen={mobileNavOpen} setIsOpen={setMobileNavOpen} />
     </StickyFlexBox>
   );
 };

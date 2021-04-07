@@ -14,13 +14,7 @@ const Hero = () => {
       <Parallax>
         <FullScreenContainer id="hero">
           <ImageContainer>
-            <StaticImage
-              src="../images/hero.png"
-              alt="lettering-header"
-              layout="constrained"
-              width={400}
-              className="mx-4"
-            />
+            <StaticImage src="../images/hero.png" alt="lettering-header" width={400} className="mx-4" />
             <SubTitle>Fasnacht im Herzen.</SubTitle>
             <SubTitle>Seit 1961.</SubTitle>
           </ImageContainer>

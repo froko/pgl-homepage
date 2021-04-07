@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      minHeight: {
+        'remaining-screen': 'calc(100vh - 11.5rem)'
+      },
       colors: {
         'pgl-blue': '#017CC2'
       },

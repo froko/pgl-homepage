@@ -4,20 +4,25 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Parallax } from '../components/styles';
 
-import Hero from './hero';
-import Info from './info';
-import News from './news';
-import Agenda from './agenda';
-import About from './about';
-import Media from './media';
-import ShopItems from './shop-items';
-import Contact from './contact';
+import Hero from '../sections/hero';
+import Info from '../sections/info';
+import News from '../sections/news';
+import Agenda from '../sections/agenda';
+import About from '../sections/about';
+import Media from '../sections/media';
+import ShopItems from '../sections/shop';
+import Contact from '../sections/contact';
 
 const Home = () => {
-  const [shopingBasket, setShopingBasket] = useState([]);
+  const [shoppingBasket, setShoppingBasket] = useState(JSON.parse(sessionStorage.getItem('shopping-basket')) ?? []);
+
+  const addToBasket = (item) => {
+    setShoppingBasket([...shoppingBasket, item]);
+    sessionStorage.setItem('shopping-basket', JSON.stringify([...shoppingBasket, item]));
+  };
 
   return (
-    <Layout shopingBasket={shopingBasket}>
+    <Layout basket={shoppingBasket}>
       <SEO title="PGL" />
       <Hero />
       <Parallax>
@@ -26,7 +31,7 @@ const Home = () => {
         <Agenda />
         <About />
         <Media />
-        <ShopItems addToBasket={(item) => setShopingBasket([...shopingBasket, item])} />
+        <ShopItems addToBasket={(item) => addToBasket(item)} />
         <Contact />
       </Parallax>
     </Layout>

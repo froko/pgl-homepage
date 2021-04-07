@@ -4,7 +4,7 @@ import tw, { GlobalStyles } from 'twin.macro';
 import '../styles/style.css';
 import Header from './header';
 
-const Layout = ({ shopingBasket, children }) => {
+const Layout = ({ basket, children }) => {
   const PageContainer = tw.div`min-h-screen overflow-y-auto overflow-x-hidden`;
   const Content = tw.div``;
 
@@ -12,7 +12,7 @@ const Layout = ({ shopingBasket, children }) => {
     <>
       <GlobalStyles />
       <PageContainer>
-        <Header shopingBasket={shopingBasket} />
+        <Header basket={basket} />
         <Content>{children}</Content>
       </PageContainer>
     </>
