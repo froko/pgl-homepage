@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -14,7 +14,11 @@ import ShopItems from '../sections/shop';
 import Contact from '../sections/contact';
 
 const Home = () => {
-  const [shoppingBasket, setShoppingBasket] = useState(JSON.parse(sessionStorage.getItem('shopping-basket')) ?? []);
+  const [shoppingBasket, setShoppingBasket] = useState([]);
+
+  useEffect(() => {
+    setShoppingBasket(JSON.parse(sessionStorage.getItem('shopping-basket')) ?? []);
+  }, []);
 
   const addToBasket = (item) => {
     setShoppingBasket([...shoppingBasket, item]);

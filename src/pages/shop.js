@@ -10,12 +10,16 @@ import NoContent from '../components/shop/no-content';
 import { Parallax, WhiteBackground } from '../components/styles';
 
 const Shop = () => {
-  const [shoppingBasket, setShoppingBasket] = useState(JSON.parse(sessionStorage.getItem('shopping-basket')) ?? []);
+  const [shoppingBasket, setShoppingBasket] = useState([]);
   const [articles, setArticles] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
 
   const HeaderMargin = tw.div`pt-16`;
   const ShopContent = tw.div`bg-white max-w-lg md:mx-auto px-2 min-h-remaining-screen`;
+
+  useEffect(() => {
+    setShoppingBasket(JSON.parse(sessionStorage.getItem('shopping-basket')) ?? []);
+  }, []);
 
   useEffect(() => {
     let groupedItems = [];
