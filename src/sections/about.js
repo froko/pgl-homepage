@@ -101,6 +101,8 @@ const byName = (a, b) => {
 };
 
 const About = () => {
+  const Title = tw.h1`text-4xl text-center font-bold text-pgl-blue mt-8`;
+
   const data = useStaticQuery(graphql`
     query MitgliederQuery {
       mitglieder: allContentfulMitglieder {
@@ -183,6 +185,7 @@ const About = () => {
         </ul>
       </Fliesstext>
 
+      <Title>Aktivmitglieder</Title>
       <Register title="Tambourmajor" mitglieder={majoren} />
       <Register title="Cinellen" mitglieder={cinellen} />
       <Register title="Drums" mitglieder={drums} />

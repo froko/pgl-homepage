@@ -16,7 +16,7 @@ module.exports = {
       { name: 'News', to: '/#news' },
       { name: 'Agenda', to: '/#agenda' },
       { name: 'Über uns', to: '/#about' },
-      { name: 'Fasi Archiv', to: '/#media' },
+      { name: 'Archiv', to: '/#media' },
       { name: 'Shop', to: '/#shop' },
       { name: 'Kontakt', to: '/#contact' }
     ]
