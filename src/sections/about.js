@@ -165,11 +165,21 @@ const About = () => {
         <p>Wir sind Mitglied der "Vereinigte" seit deren Gründung im Jahr 1964.</p>
         <p>Der aktuelle Vorstand besteht aus</p>
         <ul>
-          <li>Beat Thalmann - Präsident,</li>
-          <li>Andi Felber - Tambourmajor und Vize-Präsident,</li>
-          <li>Markus Helfenstein - Kassier,</li>
-          <li>Manuel Brun - Beisitzer,</li>
-          <li>René Sidler - Aktuar</li>
+          <li>
+            <b>Beat Thalmann - Präsident,</b>
+          </li>
+          <li>
+            <b>Andi Felber - Tambourmajor und Vize-Präsident,</b>
+          </li>
+          <li>
+            <b>Markus Helfenstein - Kassier,</b>
+          </li>
+          <li>
+            <b>Manuel Brun - Beisitzer,</b>
+          </li>
+          <li>
+            <b>René Sidler - Aktuar</b>
+          </li>
         </ul>
       </Fliesstext>
 
