@@ -1,10 +1,23 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import tw from 'twin.macro';
 
-const NoContent = () => {
-  const Text = tw.p``;
+import Button from '../button';
 
-  return <Text>Ihr Warenkorb ist leer.</Text>;
+const NoContent = () => {
+  const Text = tw.p`text-center`;
+  const LineBreak = tw.br``;
+  const Center = tw.div`text-center`;
+
+  return (
+    <>
+      <Text>Ihr Warenkorb ist leer.</Text>
+      <LineBreak />
+      <Center>
+        <Button onClick={() => navigate('/#shop')}>Zurück zum Shop</Button>
+      </Center>
+    </>
+  );
 };
 
 export default NoContent;

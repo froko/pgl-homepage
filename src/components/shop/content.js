@@ -1,11 +1,15 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import tw from 'twin.macro';
+
+import Button from '../button';
 
 const Content = ({ articles, totalCost, remove }) => {
   const Text = tw.p``;
   const BoldText = tw.p`font-bold`;
   const LineBreak = tw.br``;
+  const Center = tw.div`text-center`;
 
   return (
     <>
@@ -20,7 +24,7 @@ const Content = ({ articles, totalCost, remove }) => {
             </div>
             <div className="text-right">CHF</div>
             <div className="text-right">{item.price.toFixed(2)}</div>
-            <div className="text-center md:text-right">
+            <div className="text-center">
               <button onClick={() => remove(item.article)}>
                 <FaRegTrashAlt />
               </button>
@@ -38,6 +42,12 @@ const Content = ({ articles, totalCost, remove }) => {
         </div>
         <div />
       </div>
+      <LineBreak />
+
+      <Center>
+        <Button onClick={() => navigate('/#shop')}>Zurück zum Shop</Button>
+      </Center>
+
       <LineBreak />
     </>
   );

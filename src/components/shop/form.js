@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import tw from 'twin.macro';
 
-import CustomerMessage from './message';
+import Button from '../button';
+import { CustomerMessage, ShopMessage } from './message';
 
 const Form = ({ articles, totalCost, onFormSubmit }) => {
-  const handleOnSubmit = (e) => {
+  const [formData, updateFormData] = useState({
+    vorname: '',
+    name: '',
+    adresse: '',
+    plz: 0,
+    ort: '',
+    eamil: '',
+    phone: ''
+  });
+
+  const handleChange = (e) => {
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+    formData[fieldName] = fieldValue;
+    updateFormData(formData);
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
     const method = 'post';
-    const url = 'https://getform.io/f/d9012aba-ea6c-4b15-87e6-bebd6456f982';
-    const data = new FormData(form);
+    const url = 'https://pgl-mailgun.vercel.app//shop';
+    const data = formData;
+    data['customerMessage'] = CustomerMessage(articles, totalCost);
+    data['shopMessage'] = ShopMessage(articles, totalCost, formData);
 
     axios({ method, url, data }).then(() => {
       onFormSubmit();
@@ -20,17 +39,17 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
   const Text = tw.p``;
   const BoldText = tw.p`font-bold`;
   const LineBreak = tw.br``;
+  const Center = tw.div`w-full mt-4 text-center`;
 
-  const Form = tw.form`w-full max-w-lg`;
+  const Form = tw.form`w-full -mx-2`;
   const FlexWrap = tw.div`flex flex-wrap`;
-  const HalfFormField = tw.div`w-full md:w-1/2 mb-2 md:px-2`;
-  const FullFormField = tw.div`w-full mb-2 md:px-2`;
+  const HalfFormField = tw.div`w-full md:w-1/2 mb-2 px-2`;
+  const FullFormField = tw.div`w-full mb-2 px-2`;
   const Label = tw.label`block uppercase tracking-wide text-gray-700 text-xs font-bold ml-1 mb-1 mt-2`;
   const Input = tw.input`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none`;
-  const Button = tw.button`bg-pgl-blue hover:bg-blue-800 text-white font-bold my-4 py-2 px-4 rounded focus:outline-none`;
 
   return (
-    <Form onSubmit={handleOnSubmit}>
+    <>
       <Text>
         Füllen Sie das unten stehende Formular aus und teilen Sie uns mit, wie wir Sie bei Fragen erreichen können.
       </Text>
@@ -46,46 +65,42 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
       <BoldText>6000 Luzern</BoldText>
       <LineBreak />
 
-      <FlexWrap>
-        <HalfFormField>
-          <Label htmlFor="name">Name*</Label>
-          <Input id="name" name="name" type="text"></Input>
-        </HalfFormField>
-        <HalfFormField>
-          <Label htmlFor="vorname">Vorname*</Label>
-          <Input id="vorname" name="vorname" type="text"></Input>
-        </HalfFormField>
-        <FullFormField>
-          <Label htmlFor="adresse">Adresse*</Label>
-          <Input id="adresse" name="adresse" type="text"></Input>
-        </FullFormField>
-        <HalfFormField>
-          <Label htmlFor="plz">PLZ*</Label>
-          <Input id="plz" name="plz" type="number"></Input>
-        </HalfFormField>
-        <HalfFormField>
-          <Label htmlFor="ort">Ort*</Label>
-          <Input id="ort" name="ort" type="text"></Input>
-        </HalfFormField>
-        <HalfFormField>
-          <Label htmlFor="email">Email*</Label>
-          <Input id="email" name="email" type="email"></Input>
-        </HalfFormField>
-        <HalfFormField>
-          <Label htmlFor="phone">Telefon</Label>
-          <Input id="phone" name="phone" type="text"></Input>
-        </HalfFormField>
-        <Input
-          hidden
-          readOnly
-          id="message"
-          name="message"
-          type="text"
-          value={CustomerMessage(articles, totalCost)}
-        ></Input>
-        <Button type="submit">Bestellen</Button>
-      </FlexWrap>
-    </Form>
+      <Form onSubmit={handleSubmit}>
+        <FlexWrap>
+          <HalfFormField>
+            <Label htmlFor="vorname">Vorname*</Label>
+            <Input name="vorname" type="text" required onChange={handleChange}></Input>
+          </HalfFormField>
+          <HalfFormField>
+            <Label htmlFor="name">Name*</Label>
+            <Input name="name" type="text" required onChange={handleChange}></Input>
+          </HalfFormField>
+          <FullFormField>
+            <Label htmlFor="adresse">Adresse*</Label>
+            <Input name="adresse" type="text" required onChange={handleChange}></Input>
+          </FullFormField>
+          <HalfFormField>
+            <Label htmlFor="plz">PLZ*</Label>
+            <Input name="plz" type="number" required onChange={handleChange}></Input>
+          </HalfFormField>
+          <HalfFormField>
+            <Label htmlFor="ort">Ort*</Label>
+            <Input name="ort" type="text" required onChange={handleChange}></Input>
+          </HalfFormField>
+          <HalfFormField>
+            <Label htmlFor="email">Email*</Label>
+            <Input name="email" type="email" required onChange={handleChange}></Input>
+          </HalfFormField>
+          <HalfFormField>
+            <Label htmlFor="phone">Telefon</Label>
+            <Input name="phone" type="text" onChange={handleChange}></Input>
+          </HalfFormField>
+          <Center>
+            <Button type="submit">Bestellen</Button>
+          </Center>
+        </FlexWrap>
+      </Form>
+    </>
   );
 };
 

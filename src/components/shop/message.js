@@ -1,4 +1,4 @@
-const CustomerMessage = (articles, totalCost) => {
+export const CustomerMessage = (articles, totalCost) => {
   const articlesAsString = articles
     .map((item) => `<li>${item.quantity}x ${item.article} (CHF ${item.price.toFixed(2)})</li>`)
     .toString()
@@ -18,4 +18,22 @@ const CustomerMessage = (articles, totalCost) => {
     Pilatusgeister Luzern`;
 };
 
-export default CustomerMessage;
+export const ShopMessage = (articles, totalCost, formData) => {
+  const articlesAsString = articles
+    .map((item) => `<li>${item.quantity}x ${item.article} (CHF ${item.price.toFixed(2)})</li>`)
+    .toString()
+    .replace(/,/g, '');
+
+  const phone = formData.phone ? formData.phone : 'unbekannt';
+
+  return `
+    Hallo<br /><br />
+    Folgende Artikel wurden eben über den PGL Webshop bestellt:
+    <ul>${articlesAsString}</ul><br />
+    <b>Total: CHF ${totalCost.toFixed(2)}</b><br /><br />
+    Die Artikel sollen nach erfolgreichem Zahlungseingang an folgende Adresse geschickt werden:<br /><br />
+    <b>${formData.vorname} ${formData.name}</b><br />
+    <b>${formData.adresse}</b><br />
+    <b>${formData.plz} ${formData.ort}</b><br /><br />
+    Telefonnummer: ${phone}`;
+};
