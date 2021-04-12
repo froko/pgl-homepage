@@ -1,2 +1,1 @@
 # Pilatusgeister Luzern
-Pädi
