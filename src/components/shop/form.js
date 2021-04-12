@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import tw from 'twin.macro';
 
 import Button from '../button';
@@ -25,13 +24,18 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const method = 'post';
-    const url = 'https://pgl-mailgun.vercel.app//shop';
+    const url = 'https://pgl-form-api.vercel.app/api/shop';
     const data = formData;
     data['customerMessage'] = CustomerMessage(articles, totalCost);
     data['shopMessage'] = ShopMessage(articles, totalCost, formData);
 
-    axios({ method, url, data }).then(() => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    };
+
+    fetch(url, requestOptions).then(() => {
       onFormSubmit();
     });
   };
@@ -69,31 +73,31 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
         <FlexWrap>
           <HalfFormField>
             <Label htmlFor="vorname">Vorname*</Label>
-            <Input name="vorname" type="text" required onChange={handleChange}></Input>
+            <Input id="vorname" name="vorname" type="text" required onChange={handleChange}></Input>
           </HalfFormField>
           <HalfFormField>
             <Label htmlFor="name">Name*</Label>
-            <Input name="name" type="text" required onChange={handleChange}></Input>
+            <Input id="name" name="name" type="text" required onChange={handleChange}></Input>
           </HalfFormField>
           <FullFormField>
             <Label htmlFor="adresse">Adresse*</Label>
-            <Input name="adresse" type="text" required onChange={handleChange}></Input>
+            <Input id="adresse" name="adresse" type="text" required onChange={handleChange}></Input>
           </FullFormField>
           <HalfFormField>
             <Label htmlFor="plz">PLZ*</Label>
-            <Input name="plz" type="number" required onChange={handleChange}></Input>
+            <Input id="plz" name="plz" type="number" required onChange={handleChange}></Input>
           </HalfFormField>
           <HalfFormField>
             <Label htmlFor="ort">Ort*</Label>
-            <Input name="ort" type="text" required onChange={handleChange}></Input>
+            <Input id="ort" name="ort" type="text" required onChange={handleChange}></Input>
           </HalfFormField>
           <HalfFormField>
             <Label htmlFor="email">Email*</Label>
-            <Input name="email" type="email" required onChange={handleChange}></Input>
+            <Input id="email" name="email" type="email" required onChange={handleChange}></Input>
           </HalfFormField>
           <HalfFormField>
             <Label htmlFor="phone">Telefon</Label>
-            <Input name="phone" type="text" onChange={handleChange}></Input>
+            <Input id="phone" name="phone" type="text" onChange={handleChange}></Input>
           </HalfFormField>
           <Center>
             <Button type="submit">Bestellen</Button>

@@ -35,5 +35,6 @@ export const ShopMessage = (articles, totalCost, formData) => {
     <b>${formData.vorname} ${formData.name}</b><br />
     <b>${formData.adresse}</b><br />
     <b>${formData.plz} ${formData.ort}</b><br /><br />
+    Email: ${formData.email}<br />
     Telefonnummer: ${phone}`;
 };

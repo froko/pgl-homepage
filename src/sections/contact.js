@@ -20,7 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = 'http://localhost:3000/api/contact';
+    const url = 'https://pgl-form-api.vercel.app/api/contact';
 
     const requestOptions = {
       method: 'POST',
