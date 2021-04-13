@@ -1,0 +1,16 @@
+.slick-slider {
+  height: 74px !important;
+  width: 400px !important;
+}
+
+.slick-next,
+.slick-prev {
+  z-index: 0 !important;
+  opacity: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .slick-slider {
+    display: none !important;
+  }
+}

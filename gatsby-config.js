@@ -32,6 +32,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/images/ads`,
+        name: 'ads'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
         offset: -60

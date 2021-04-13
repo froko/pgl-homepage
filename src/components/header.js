@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
+import AdCarousel from './ad-carousel';
 import MobileNavigation from './navigation/mobile';
 import Hamburger from './navigation/hamburger';
 import ShoppingBasket from './navigation/basket';
@@ -14,7 +15,7 @@ const Header = ({ basket }) => {
   const StickyFlexBox = tw.div`fixed w-full top-0 flex justify-between items-center z-10 h-16 md:h-20 px-4 py-1 bg-white shadow-md`;
   const Spacer = tw.div`flex-grow`;
 
-  const { site } = useStaticQuery(graphql`
+  const { site, allFile } = useStaticQuery(graphql`
     query {
       site {
         data: siteMetadata {
@@ -25,13 +26,25 @@ const Header = ({ basket }) => {
           }
         }
       }
+      allFile(filter: { extension: { regex: "/(png)/" }, sourceInstanceName: { eq: "ads" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              gatsbyImageData(quality: 80)
+            }
+          }
+        }
+      }
     }
   `);
 
   return (
     <StickyFlexBox>
-      <StaticImage src="../images/logo.png" alt="logo" height={64} className="hidden lg:block mr-4" />
-      <StaticImage src="../images/header.png" alt="header" height={36} className="mr-4" />
+      <StaticImage src="../images/logo.png" alt="logo" height={64} className="mr-4" />
+      <StaticImage src="../images/header.png" alt="header" height={40} className="mr-4" />
+      <Spacer />
+      <AdCarousel images={allFile.edges.map((e) => e.node)} />
       <Spacer />
       <ShoppingBasket basket={basket} />
       <Hamburger setIsOpen={setMobileNavOpen} />
