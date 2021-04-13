@@ -31,7 +31,7 @@ const Header = ({ basket }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(quality: 80)
+              gatsbyImageData(quality: 100)
             }
           }
         }
