@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import { Parallax } from '../components/styles';
 
 import Hero from '../sections/hero';
@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <Layout basket={shoppingBasket}>
-      <SEO title="PGL" />
+      <Seo title="PGL" />
       <Hero />
       <Parallax>
         <Info />

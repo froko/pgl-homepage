@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import tw from 'twin.macro';
 
 import Layout from './template-layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Gallery from '../components/gallery';
 import Video from '../components/video';
 
@@ -18,7 +18,7 @@ const GalleryItem = (props) => {
 
   return (
     <Layout url="/#media">
-      <SEO title={props.data.item.titel} />
+      <Seo title={props.data.item.titel} />
       <div className="bg-gray-100">
         <Container>
           <Title>{props.data.item.titel}</Title>

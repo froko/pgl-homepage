@@ -7,7 +7,7 @@ import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 import Layout from './template-layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Carousel from '../components/carousel';
 
 const NewsItem = (props) => {
@@ -34,7 +34,7 @@ const NewsItem = (props) => {
 
   return (
     <Layout url="/#news">
-      <SEO title={titel} />
+      <Seo title={titel} />
       <Background>
         <Container>
           <FlexBox>

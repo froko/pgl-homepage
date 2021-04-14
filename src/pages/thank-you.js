@@ -3,7 +3,7 @@ import { navigate } from 'gatsby';
 import tw from 'twin.macro';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Button from '../components/button';
 import { Parallax, WhiteBackground } from '../components/styles';
 
@@ -20,7 +20,7 @@ const Shop = () => {
 
   return (
     <Layout>
-      <SEO title="Shop" />
+      <Seo title="Shop" />
       <Parallax>
         <HeaderMargin>
           <WhiteBackground title="Shop">

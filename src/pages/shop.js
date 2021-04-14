@@ -3,7 +3,7 @@ import { navigate } from 'gatsby';
 import tw from 'twin.macro';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Content from '../components/shop/content';
 import Form from '../components/shop/form';
 import NoContent from '../components/shop/no-content';
@@ -55,7 +55,7 @@ const Shop = () => {
 
   return (
     <Layout basket={shoppingBasket}>
-      <SEO title="Shop" />
+      <Seo title="Shop" />
       <Parallax>
         <HeaderMargin>
           <WhiteBackground title="Warenkorb">

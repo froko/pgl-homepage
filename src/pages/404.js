@@ -1,7 +1,7 @@
 import tw from 'twin.macro';
 import React from 'react';
 
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Layout from '../components/layout';
 
 const Wrapper = tw.div`
@@ -24,7 +24,7 @@ export default function Custom404() {
   return (
     <Layout>
       <Wrapper>
-        <SEO title="Page Not Found" />
+        <Seo title="Page Not Found" />
         <Main>
           <Heading>Oops!</Heading>
           <Text>We can't find the page that you are looking for.</Text>
