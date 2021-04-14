@@ -1,6 +1,6 @@
 name: Node.js Deployment
 
-on: workflow_dispatch    
+on: repository_dispatch    
 
 jobs:
   deploy:
