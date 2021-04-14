@@ -5,25 +5,17 @@ const { FTP_HOST, FTP_USER, FTP_PASSWORD } = process.env;
 const FtpDeploy = require('ftp-deploy');
 const ftp = require('basic-ftp');
 const basicFtpClient = new ftp.Client();
-const https = require('https');
 
 const LOCAL_BUILD_DIRECTORY = 'public';
-const DEPLOY_DIRECTORY_NAME = 'temp-pgl';
-const BACKUP_DIRECTORY_NAME = 'backup-pgl';
-const PRODUCTION_DIRECTORY_NAME = 'www/pgl';
-const BROKEN_BUILD = 'broken';
-const PRODUCTION_URL = 'https://pgl.frokonet.ch/';
+const DEPLOY_DIRECTORY_NAME = 'subdomains/new/deploy';
+const BACKUP_DIRECTORY_NAME = 'subdomains/new/backup';
+const PRODUCTION_DIRECTORY_NAME = 'subdomains/new/httpdocs';
 
 function main() {
   return uploadBuildDirectory()
     .catch((error) => onError('Upload', error))
     .then(() => renameFtpDirectories())
     .catch((error) => onError('Rename', error))
-    .then(async (backupDirectoryName) => {
-      const isLive = await isProductionLive();
-      if (!isLive) return rollBackProduction(backupDirectoryName);
-    })
-    .catch((error) => onError('Rollback', error))
     .then(() => {
       console.log('Deploy FINISHED');
       basicFtpClient.close();
@@ -37,11 +29,12 @@ function uploadBuildDirectory() {
     user: FTP_USER,
     password: FTP_PASSWORD,
     port: 21,
-    continueOnError: true,
+    continueOnError: false,
     localRoot: `./${LOCAL_BUILD_DIRECTORY}`,
     remoteRoot: `./${DEPLOY_DIRECTORY_NAME}`,
     forcePasv: true,
-    include: ['*', '**/*']
+    sftp: false,
+    include: ['*', '.*', '**/*']
   };
 
   const ftpDeploy = new FtpDeploy();
@@ -67,7 +60,7 @@ async function renameFtpDirectories() {
     secure: false
   });
 
-  const directories = await basicFtpClient.list('.');
+  const directories = await basicFtpClient.list('./subdomains/new');
   const backupDirectoryName = createBackupDirectoryName(directories);
   console.log(`Backup folder name: ${backupDirectoryName}`);
 
@@ -95,26 +88,6 @@ function formatDate(date) {
   const paddedDay = date.getDate().toString().padStart(2, '0');
 
   return `${date.getFullYear()}-${paddedMonth}-${paddedDay}`;
-}
-
-function isProductionLive() {
-  return new Promise((resolve) => {
-    https
-      .get(PRODUCTION_URL, (res) => {
-        console.log(`Production status code ${res.statusCode}`);
-        resolve(res.statusCode === 200);
-      })
-      .on('error', (_) => {
-        resolve(false);
-      });
-  });
-}
-
-async function rollBackProduction(backupDirectoryName) {
-  await basicFtpClient.rename(PRODUCTION_DIRECTORY_NAME, BROKEN_BUILD);
-  await basicFtpClient.rename(backupDirectoryName, PRODUCTION_DIRECTORY_NAME);
-  console.log(`Rollback COMPLETED`);
-  fail();
 }
 
 function onError(name, error) {
