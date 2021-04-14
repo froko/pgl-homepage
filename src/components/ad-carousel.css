@@ -1,16 +1,16 @@
-.slick-slider {
-  height: 64px !important;
-  width: 337px !important;
+.header-slider {
+  height: 64px;
+  width: 337px;
 }
 
 .slick-next,
 .slick-prev {
-  z-index: 0 !important;
-  opacity: 0 !important;
+  z-index: 0;
+  opacity: 0;
 }
 
 @media (max-width: 1024px) {
-  .slick-slider {
-    display: none !important;
+  .header-slider {
+    display: none;
   }
 }

@@ -14,7 +14,7 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider className="news-slider" {...settings}>
       {images.map((image) => {
         const slideImage = getImage(image.gatsbyImageData);
         return (

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
@@ -14,12 +14,8 @@ const AdCarousel = ({ images }) => {
     prevArrow: <span />
   };
 
-  useEffect(() => {
-    console.log(images);
-  });
-
   return (
-    <Slider {...settings}>
+    <Slider className="header-slider" {...settings}>
       {images.map((image) => {
         const slideImage = getImage(image.childImageSharp.gatsbyImageData);
         return <GatsbyImage image={slideImage} alt={image.name} key={image.name} />;
