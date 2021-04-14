@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
 import { BlueBackground } from '../components/styles';
 
+const Card = tw.div`w-full sm:w-auto flex justify-center m-2 p-2`;
+const Title = tw.h2`text-gray-100 text-xl text-center font-bold mb-2`;
+
 const MediaCard = (props) => {
   const { slug, titel, vorschaubild } = props;
-
-  const Card = tw.div`w-full sm:w-auto flex justify-center m-2 p-2`;
-  const Title = tw.h2`text-gray-100 text-xl text-center font-bold mb-2`;
 
   const image = getImage(vorschaubild);
 
@@ -28,7 +28,7 @@ const Media = () => {
 
   const { media } = useStaticQuery(graphql`
     query MediaQuery {
-      media: allContentfulMedia(sort: { fields: [titel], order: DESC }) {
+      media: allContentfulMedia(sort: { fields: [titel], order: DESC }, filter: { archiv: { eq: false } }) {
         nodes {
           id
           titel
@@ -47,6 +47,30 @@ const Media = () => {
         {media.nodes.map((node) => (
           <MediaCard {...node} key={node.id} />
         ))}
+        <Card>
+          <Link to={`/#media`}>
+            <StaticImage
+              src="../images/photo-archiv.jpg"
+              width={220}
+              height={220}
+              alt="photo"
+              className="rounded-full"
+            />
+            <Title>Ältere Jahre</Title>
+          </Link>
+        </Card>
+        <Card>
+          <Link to={`/audio-archiv`}>
+            <StaticImage
+              src="../images/audio-archiv.jpg"
+              width={220}
+              height={220}
+              alt="audio"
+              className="rounded-full"
+            />
+            <Title>Alte Tonträger</Title>
+          </Link>
+        </Card>
       </FlexBox>
     </BlueBackground>
   );
