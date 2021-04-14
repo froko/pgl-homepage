@@ -5,10 +5,9 @@ import tw from 'twin.macro';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import Button from '../components/button';
-import { Parallax, WhiteBackground } from '../components/styles';
+import { Parallax, WhiteBackground, HeaderMargin } from '../components/styles';
 
 const Shop = () => {
-  const HeaderMargin = tw.div`pt-16`;
   const ShopContent = tw.div`bg-white max-w-lg md:mx-auto p-2 min-h-remaining-screen`;
   const Text = tw.p`text-center`;
   const LineBreak = tw.br``;

@@ -3,6 +3,8 @@ import tw from 'twin.macro';
 
 import '../styles/style.css';
 
+export const HeaderMargin = tw.div`pt-16`;
+
 export const Parallax = ({ children }) => {
   return <div className="parallax">{children}</div>;
 };

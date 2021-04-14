@@ -13,7 +13,7 @@ const Main = tw.div`
 `;
 
 const Heading = tw.h1`
-  text-2xl text-gray-500 uppercase
+  text-2xl text-gray-500 uppercase text-center
 `;
 
 const Text = tw.p`
@@ -26,8 +26,8 @@ export default function Custom404() {
       <Wrapper>
         <Seo title="Page Not Found" />
         <Main>
-          <Heading>Oops!</Heading>
-          <Text>We can't find the page that you are looking for.</Text>
+          <Heading>Hopperla!</Heading>
+          <Text>Leider konnten wir an dieser URL nichts finden.</Text>
         </Main>
       </Wrapper>
     </Layout>

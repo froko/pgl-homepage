@@ -7,14 +7,13 @@ import Seo from '../components/seo';
 import Content from '../components/shop/content';
 import Form from '../components/shop/form';
 import NoContent from '../components/shop/no-content';
-import { Parallax, WhiteBackground } from '../components/styles';
+import { Parallax, WhiteBackground, HeaderMargin } from '../components/styles';
 
 const Shop = () => {
   const [shoppingBasket, setShoppingBasket] = useState([]);
   const [articles, setArticles] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
 
-  const HeaderMargin = tw.div`pt-16`;
   const ShopContent = tw.div`bg-white max-w-lg min-h-remaining-screen mx-2 md:mx-auto p-2 md:p-4 min-h-remaining-screen`;
 
   useEffect(() => {
