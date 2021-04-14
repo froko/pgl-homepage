@@ -33,7 +33,7 @@ const GalleryItem = (props) => {
           <Gallery images={props.data.item.bilder} />
         </PseudoMargin>
         <Spacer />
-        {props.data.item.youtubeLinks.map((url) => (
+        {props.data.item.youtubeLinks?.map((url) => (
           <VideoMargin key={counter++}>
             <Video videoSrcURL={url} />
             <Spacer />
