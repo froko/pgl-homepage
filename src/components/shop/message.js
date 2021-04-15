@@ -13,9 +13,10 @@ export const CustomerMessage = (articles, totalCost) => {
     Versand nur gegen Vorauszahlung. Unsere Bankverbindung lautet:<br /><br />
     <b>IBAN: CH55 0900 0000 6050 6507 7</b><br />
     <b>Guggenmusig Pilatusgeister</b><br />
-    <b>6000 Luzern</b><br /><br /><br />
-    Beste Grüsse,<br>
-    Pilatusgeister Luzern`;
+    <b>6000 Luzern</b><br /><br />
+    Alternativ können Sie auch unseren QR-Einzahlungsschein im Anhang für die Zahlung verwenden.<br /><br /><br />
+    Beste Grüsse,<br />
+    Pilatusgeister Luzern<br />`;
 };
 
 export const ShopMessage = (articles, totalCost, formData) => {
