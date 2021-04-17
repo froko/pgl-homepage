@@ -56,7 +56,7 @@ const Media = () => {
               alt="photo"
               className="rounded-full"
             />
-            <Title>Ältere Jahre</Title>
+            <Title>Damals</Title>
           </Link>
         </Card>
         <Card>
@@ -68,7 +68,7 @@ const Media = () => {
               alt="audio"
               className="rounded-full"
             />
-            <Title>Alte Tonträger</Title>
+            <Title>Tonträger</Title>
           </Link>
         </Card>
       </FlexBox>
