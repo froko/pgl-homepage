@@ -26,7 +26,7 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
     e.preventDefault();
     const url = 'https://pgl-form-api.vercel.app/api/shop';
     const data = formData;
-    data['customerMessage'] = CustomerMessage(articles, totalCost);
+    data['customerMessage'] = CustomerMessage(articles, totalCost, formData.vorname);
     data['shopMessage'] = ShopMessage(articles, totalCost, formData);
 
     const requestOptions = {
@@ -55,7 +55,7 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
   return (
     <>
       <Text>
-        Füllen Sie das unten stehende Formular aus und teilen Sie uns mit, wie wir Sie bei Fragen erreichen können.
+        Bitte fülle das unten stehende Formular aus und teile uns mit, wie wir dich bei Fragen erreichen können.
       </Text>
       <Text>
         Sämtliche Produktpreise verstehen sich inkl. Verpackungs- und Versandspesen. Für den Versand ins Ausland können
@@ -67,6 +67,10 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
       <BoldText>IBAN: CH55 0900 0000 6050 6507 7</BoldText>
       <BoldText>Guggenmusig Pilatusgeister</BoldText>
       <BoldText>6000 Luzern</BoldText>
+      <LineBreak />
+      <Text>
+        Die Liste der bestellten Artikel sowie die Zahlungsinformationen stellen wir dir zusätzlich per Email zu.
+      </Text>
       <LineBreak />
 
       <Form onSubmit={handleSubmit}>

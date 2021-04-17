@@ -13,7 +13,7 @@ const Content = ({ articles, totalCost, remove }) => {
 
   return (
     <>
-      <Text>Sie haben folgende Artikel in Ihrem Warenkorb:</Text>
+      <Text>Du hast folgende Artikel in deinem Warenkorb:</Text>
       <LineBreak />
 
       <div className="grid grid-cols-6 gap-2">

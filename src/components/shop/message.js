@@ -1,20 +1,22 @@
-export const CustomerMessage = (articles, totalCost) => {
+export const CustomerMessage = (articles, totalCost, vorname) => {
   const articlesAsString = articles
     .map((item) => `<li>${item.quantity}x ${item.article} (CHF ${item.price.toFixed(2)})</li>`)
     .toString()
     .replace(/,/g, '');
 
   return `
-    Guten Tag & herzlichen Dank für Ihre Bestellung.<br /><br />
-    Sie haben folgende Artikel bestellt:<br />
-    <ul>${articlesAsString}</ul><br /> <br />
-    <b>Total: CHF ${totalCost.toFixed(2)}</b><br /> <br />
+    Hallo ${vorname}<br /><br />
+    Herzlichen Dank für deine Bestellung im PGL-Shop!<br />
+    Du hast folgende Artikel bestellt:<br />
+    <ul>${articlesAsString}</ul><br />
+    <b>Total: CHF ${totalCost.toFixed(2)}</b><br /><br />
     Sämtliche Produktpreise verstehen sich inkl. Verpackungs- und Versandspesen.<br />
-    Versand nur gegen Vorauszahlung. Unsere Bankverbindung lautet:<br /><br />
+    Versand nur gegen Vorauszahlung. Für den Versand ins Ausland können zusätzliche Kosten entstehen.<br />
+    Unsere Bankverbindung lautet:<br /><br />
     <b>IBAN: CH55 0900 0000 6050 6507 7</b><br />
     <b>Guggenmusig Pilatusgeister</b><br />
     <b>6000 Luzern</b><br /><br />
-    Alternativ können Sie auch unseren QR-Einzahlungsschein im Anhang für die Zahlung verwenden.<br /><br /><br />
+    Alternativ kannst du auch unseren QR-Einzahlungsschein im Anhang für die Zahlung verwenden.<br /><br /><br />
     Beste Grüsse,<br />
     Pilatusgeister Luzern<br />`;
 };

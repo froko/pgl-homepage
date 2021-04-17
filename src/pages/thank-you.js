@@ -24,8 +24,8 @@ const Shop = () => {
         <HeaderMargin>
           <WhiteBackground title="Shop">
             <ShopContent>
-              <Text>Vielen Dank für Ihre Bestellung!</Text>
-              <Text>Sie werden in Kürze ein Mail mit den Zahlungsinformationen erhalten.</Text>
+              <Text>Vielen Dank für deine Bestellung!</Text>
+              <Text>Du wirst in Kürze ein Mail mit den Zahlungsinformationen erhalten.</Text>
               <LineBreak />
               <Center>
                 <Button onClick={() => navigate('/')}>Zurück zur Homepage</Button>

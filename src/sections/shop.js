@@ -70,7 +70,7 @@ const ShopItems = ({ addToBasket }) => {
           <Song>Silber</Song>
         </TableOfContents>
       </Pin>
-      <CompactDisc article='CD "Halleluja" (2016)' price={30} addToBasket={(item) => addToBasket(item)}>
+      <CompactDisc article='CD "Halleluja" (2016)' price={25} addToBasket={(item) => addToBasket(item)}>
         <StaticImage src="../images/halleluja.jpg" alt="halleluja" width={520} />
         <TableOfContents>
           <Song>01. Halleluja</Song>
@@ -93,7 +93,7 @@ const ShopItems = ({ addToBasket }) => {
           <Song>18. Das Spatzenlied</Song>
         </TableOfContents>
       </CompactDisc>
-      <CompactDisc article='CD "Jubilatus" (2011)' price={30} addToBasket={(item) => addToBasket(item)}>
+      <CompactDisc article='CD "Jubilatus" (2011)' price={25} addToBasket={(item) => addToBasket(item)}>
         <StaticImage src="../images/jubilatus.jpg" alt="jubilatus" width={520} />
         <TableOfContents>
           <Song>01. Gruss an Bern</Song>
@@ -115,7 +115,7 @@ const ShopItems = ({ addToBasket }) => {
           <Song>17. Einen Stern</Song>
         </TableOfContents>
       </CompactDisc>
-      <CompactDisc article='CD "Chianti" (2006)' price={30} addToBasket={(item) => addToBasket(item)}>
+      <CompactDisc article='CD "Chianti" (2006)' price={25} addToBasket={(item) => addToBasket(item)}>
         <StaticImage src="../images/chianti.jpg" alt="chianti" width={520} />
         <TableOfContents>
           <Song>01. Chianti Wein</Song>

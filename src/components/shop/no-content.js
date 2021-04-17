@@ -11,7 +11,7 @@ const NoContent = () => {
 
   return (
     <>
-      <Text>Ihr Warenkorb ist leer.</Text>
+      <Text>Dein Warenkorb ist leer.</Text>
       <LineBreak />
       <Center>
         <Button onClick={() => navigate('/#shop')}>Zurück zum Shop</Button>
