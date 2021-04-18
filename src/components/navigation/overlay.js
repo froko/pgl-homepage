@@ -65,7 +65,7 @@ const Overlay = ({ children, isOpen, setIsOpen }) => {
       variants={backgroundVariants}
     >
       <div className="flex flex-col h-full max-h-full">
-        <div className="fixed top-0 right-0 mt-4 mr-4">
+        <div className="fixed top-0 right-0 mt-4 mr-1 lg:mr-3">
           <motion.button
             initial="closed"
             animate={isOpen ? 'open' : 'closed'}

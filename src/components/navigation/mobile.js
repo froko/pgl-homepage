@@ -36,7 +36,7 @@ const MobileNavigation = ({ links, isOpen, setIsOpen }) => {
               variants={menuItem}
             >
               <AnchorLink
-                className="font-semibold text-xl text-gray-100"
+                className="font-semibold text-xl lg:text-2xl text-gray-100"
                 to={link.to}
                 onAnchorLinkClick={() => setIsOpen(false)}
               >
