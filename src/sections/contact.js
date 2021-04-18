@@ -3,12 +3,30 @@ import tw from 'twin.macro';
 
 import { BlueBackground } from '../components/styles';
 
+import loadingGif from '../images/loading-indicator.gif';
+
+const Button = ({ loading, children }) => {
+  const RelativeContainer = tw.div`relative text-center`;
+  const Btn = tw.button`items-center px-4 py-2 border border-white font-medium rounded-md text-white bg-pgl-blue hover:bg-white hover:text-pgl-blue`;
+  const LoadingImage = tw.img`absolute h-10 ml-2 top-0 right-4`;
+
+  return loading ? (
+    <RelativeContainer>
+      <Btn disabled={true}>Bitte warten...</Btn>
+      <LoadingImage src={loadingGif} alt="Loading Indicator" />
+    </RelativeContainer>
+  ) : (
+    <Btn>{children}</Btn>
+  );
+};
+
 const Contact = () => {
   const [formData, updateFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
   const [thankYou, setThankYou] = useState(false);
 
   const handleChange = (e) => {
@@ -20,8 +38,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = 'https://pgl-form-api.vercel.app/api/contact';
+    setLoading(true);
 
+    const url = 'https://pgl-form-api.vercel.app/api/contact';
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -43,7 +62,6 @@ const Contact = () => {
   const Input = tw.input`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none`;
   const MultilineInput = tw.textarea`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none`;
   const Center = tw.div`w-full text-center mt-4`;
-  const Button = tw.button`items-center px-4 py-2 border border-white font-medium rounded-md text-white bg-pgl-blue hover:bg-white hover:text-pgl-blue`;
 
   return (
     <BlueBackground id="contact" title="Kontakt">
@@ -74,7 +92,7 @@ const Contact = () => {
               ></MultilineInput>
             </FullFormField>
             <Center>
-              {thankYou ? <Text>Vielen Dank für deine Nachricht!</Text> : <Button type="submit">Senden</Button>}
+              {thankYou ? <Text>Vielen Dank für deine Nachricht!</Text> : <Button loading={loading}>Senden</Button>}
             </Center>
           </FlexWrap>
         </Form>

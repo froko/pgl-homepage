@@ -5,6 +5,7 @@ import Button from '../button';
 import { CustomerMessage, ShopMessage } from './message';
 
 const Form = ({ articles, totalCost, onFormSubmit }) => {
+  const [loading, setLoading] = useState(false);
   const [formData, updateFormData] = useState({
     vorname: '',
     name: '',
@@ -24,6 +25,8 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+
     const url = 'https://pgl-form-api.vercel.app/api/shop';
     const data = formData;
     data['customerMessage'] = CustomerMessage(articles, totalCost, formData.vorname);
@@ -104,7 +107,9 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
             <Input id="phone" name="phone" type="text" onChange={handleChange}></Input>
           </HalfFormField>
           <Center>
-            <Button type="submit">Bestellen</Button>
+            <Button type="submit" loading={loading}>
+              Bestellen
+            </Button>
           </Center>
         </FlexWrap>
       </Form>
