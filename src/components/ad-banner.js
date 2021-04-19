@@ -18,7 +18,7 @@ const AdImage = (props) => {
 
 const AdBanner = () => {
   const WhiteBackground = tw.div`w-full bg-white`;
-  const FlexBox = tw.div`flex flex-wrap mr-2`;
+  const FlexBox = tw.div`flex flex-wrap mr-2 h-32 lg:h-16`;
 
   const { allFile } = useStaticQuery(graphql`
     query {
