@@ -9,6 +9,18 @@ import ImgWrapper from './img-wrapper';
 
 import 'react-image-lightbox/style.css';
 
+const byName = (a, b) => {
+  if (a.file.fileName < b.file.fileName) {
+    return -1;
+  }
+
+  if (a.file.fileName > b.file.fileName) {
+    return 1;
+  }
+
+  return 0;
+};
+
 const Gallery = ({ images = [] }) => {
   const [index, setIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +35,7 @@ const Gallery = ({ images = [] }) => {
   return (
     <React.Fragment>
       <Row>
-        {images.map((img, imgIndex) => {
+        {images.sort(byName).map((img, imgIndex) => {
           const thumb = getImage(img.thumb);
 
           return (
