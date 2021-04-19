@@ -58,7 +58,7 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
   return (
     <>
       <Text>
-        Bitte fülle das unten stehende Formular aus und teile uns mit, wie wir dich bei Fragen erreichen können.
+        Bitte fülle das untenstehende Formular aus und teile uns mit, wie wir dich bei Fragen erreichen können.
       </Text>
       <Text>
         Sämtliche Produktpreise verstehen sich inkl. Verpackungs- und Versandspesen. Für den Versand ins Ausland können
@@ -99,7 +99,7 @@ const Form = ({ articles, totalCost, onFormSubmit }) => {
             <Input id="ort" name="ort" type="text" required onChange={handleChange}></Input>
           </HalfFormField>
           <HalfFormField>
-            <Label htmlFor="email">Email*</Label>
+            <Label htmlFor="email">E-Mail*</Label>
             <Input id="email" name="email" type="email" required onChange={handleChange}></Input>
           </HalfFormField>
           <HalfFormField>

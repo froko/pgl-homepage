@@ -241,7 +241,7 @@ const About = () => {
         willkommener Zustupf in die PGL-Kasse. Übergeben wird er jeweils am PGL-Ausflug, an dem die meisten Göttis jedes
         Jahr dabei sind. Viele von ihnen sind auch regelmässig an weiteren PGL-Anlässen mit dabei. An den PGL-Matineen
         übernehmen sie die Einlasskontrolle und bei grossen PGL-Jubiläen bilden sie den Vortrab am Monsterkonzert.
-        Jeweils am Morgen des Güdiszischtig organisieren sie den ihren mittlerweilse legendären Göttiapéro auf dem
+        Jeweils am Morgen des Güdiszischtig organisieren sie ihren mittlerweilse legendären Göttiapéro auf dem
         Kapellplatz. Dort servieren sie den zahlreichen PGL-Fans und -Aktivmitgliedern Campari Orange, Cüpli, Bier und
         heisse Bouillon und beweisen damit auf ihre typische Art, dass Harmonie bei den PGL weit übers
         guggenmusikalische hinausgeht.

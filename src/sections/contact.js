@@ -67,8 +67,8 @@ const Contact = () => {
     <BlueBackground id="contact" title="Kontakt">
       <MaxWidthContainer>
         <Text>
-          Nutze das unten stehende Formular um direkt mit uns in Kontakt zu treten. Gerne darfst du uns auch eine Email
-          an <a href="mailto:info@pgl.ch">info(at)pgl.ch</a> senden.
+          Nutze das untenstehende Formular um direkt mit uns in Kontakt zu treten. Gerne darfst du uns auch eine E-Mail
+          an <a href="mailto:info@pgl.ch">info@pgl.ch</a> senden.
         </Text>
         <Form onSubmit={handleSubmit}>
           <FlexWrap>
@@ -77,7 +77,7 @@ const Contact = () => {
               <Input id="name" name="name" type="text" required onChange={handleChange}></Input>
             </HalfFormField>
             <HalfFormField>
-              <Label htmlFor="email">Email*</Label>
+              <Label htmlFor="email">E-mail*</Label>
               <Input id="email" name="email" type="email" required onChange={handleChange}></Input>
             </HalfFormField>
             <FullFormField>

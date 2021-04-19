@@ -12,7 +12,7 @@ const Agenda = () => {
   return (
     <BlueBackground id="agenda" title="Agenda">
       <EventContainer>
-        <Event>1. Matinéekonzert</Event>
+        <Event>1. Matinée</Event>
         <Datum>am 12.02.2022 um 09:45</Datum>
         <Location>@ Stadtkeller Luzern</Location>
       </EventContainer>
@@ -21,7 +21,7 @@ const Agenda = () => {
         <Datum>am 17.02.2022 um 19:45</Datum>
       </EventContainer>
       <EventContainer>
-        <Event>2. Matinéekonzert</Event>
+        <Event>2. Matinée</Event>
         <Datum>am 19.02.2022 um 09:45</Datum>
         <Location>@ Stadtkeller Luzern</Location>
       </EventContainer>
@@ -31,12 +31,12 @@ const Agenda = () => {
         <Location>@ Luzern</Location>
       </EventContainer>
       <EventContainer>
-        <Event>Chöbusamschtig</Event>
+        <Event>Chöbu-Samschtig</Event>
         <Datum>am 26.02.2022 um 18:00</Datum>
         <Location>@ Stadtkeller Luzern</Location>
       </EventContainer>
       <EventContainer>
-        <Event>PGL - 60 Jahre Jubiläumsabend</Event>
+        <Event>60 Jahre-Jubiläumsabend</Event>
         <Datum>im Frühjahr 2022</Datum>
       </EventContainer>
     </BlueBackground>
