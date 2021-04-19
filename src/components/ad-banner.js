@@ -1,49 +1,53 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
-
-const AdImage = (props) => {
-  const ImageContainer = tw.div`py-2 w-1/3 lg:w-1/5`;
-
-  const { childImageSharp, name } = props;
-  const image = getImage(childImageSharp.gatsbyImageData);
-
-  return (
-    <ImageContainer>
-      <GatsbyImage image={image} alt={name} key={name} />
-    </ImageContainer>
-  );
-};
 
 const AdBanner = () => {
   const WhiteBackground = tw.div`w-full bg-white`;
-  const FlexBox = tw.div`flex flex-wrap mx-2`;
+  const FlexBox = tw.div`flex flex-wrap mx-2 justify-center`;
+  const ImageContainer = tw.div`py-2 w-1/3 lg:w-1/5`;
 
-  const { allFile } = useStaticQuery(graphql`
-    query {
-      allFile(filter: { extension: { regex: "/(png)/" }, sourceInstanceName: { eq: "ads" } }) {
-        edges {
-          node {
-            id
-            name
-            childImageSharp {
-              gatsbyImageData(quality: 90, height: 44, placeholder: TRACED_SVG)
-            }
-          }
-        }
-      }
-    }
-  `);
+  const quality = 90;
+  const height = 44;
+  const placeholder = 'tracedSVG';
 
   return (
     <WhiteBackground>
       <FlexBox>
-        {allFile.edges
-          .map((e) => e.node)
-          .map((node) => (
-            <AdImage {...node} key={node.id} />
-          ))}
+        <ImageContainer>
+          <Link to="https://www.stadtkeller.ch/">
+            <StaticImage
+              src="../images/ads/stadtkeller.png"
+              alt="stadtkeller"
+              quality={quality}
+              height={height}
+              placeholder={placeholder}
+            />
+          </Link>
+        </ImageContainer>
+        <ImageContainer>
+          <Link to="https://www.motelbrueggli.ch/">
+            <StaticImage
+              src="../images/ads/brueggli.png"
+              alt="brueggli"
+              quality={quality}
+              height={height}
+              placeholder={placeholder}
+            />
+          </Link>
+        </ImageContainer>
+        <ImageContainer>
+          <Link to="http://www.hotel-waldstaetterhof.ch/">
+            <StaticImage
+              src="../images/ads/waldstaetterhof.png"
+              alt="waldstaetterhof"
+              quality={quality}
+              height={height}
+              placeholder={placeholder}
+            />
+          </Link>
+        </ImageContainer>
       </FlexBox>
     </WhiteBackground>
   );
