@@ -94,7 +94,7 @@ const AudioArchiv = () => {
       <Seo title="Archiv" />
       <Parallax>
         <HeaderMargin>
-          <WhiteBackground title="Alte Tonträger">
+          <WhiteBackground title="Tonträger">
             <ArchivContent>
               <Center>
                 <Button onClick={() => navigate('/#media')}>Zurück zum Archiv</Button>
