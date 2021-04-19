@@ -13,11 +13,13 @@ const GalleryItem = (props) => {
 
   const Container = tw.div`container mx-auto p-4`;
   const TitleContainer = tw.div`relative w-full`;
-  const Title = tw.h1`text-4xl md:text-6xl text-pgl-blue font-bold text-left lg:text-center`;
+  const Title = tw.h1`text-4xl text-pgl-blue font-bold text-left lg:text-center`;
   const AbsoluteButton = tw.div`absolute bottom-0 right-0`;
   const PseudoMargin = tw.div`mx-3 mt-6`;
   const VideoMargin = tw.div`mx-1 md:mx-0`;
   const Spacer = tw.div`mb-4`;
+
+  const target = props.data.item.archiv ? '/bilder-archiv' : '/#media';
 
   return (
     <Layout url="/#media">
@@ -26,7 +28,7 @@ const GalleryItem = (props) => {
         <TitleContainer>
           <Title>{props.data.item.titel}</Title>
           <AbsoluteButton>
-            <Button onClick={() => navigate('/#media')}>Zurück</Button>
+            <Button onClick={() => navigate(target)}>Zurück</Button>
           </AbsoluteButton>
         </TitleContainer>
         <PseudoMargin>
@@ -50,6 +52,7 @@ export const query = graphql`
   query MediaItemQuery($slug: String!) {
     item: contentfulMedia(slug: { eq: $slug }) {
       titel
+      archiv
       youtubeLinks
       bilder {
         id
