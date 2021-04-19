@@ -242,7 +242,7 @@ const About = () => {
           <ListItem>Peter Bachmann</ListItem>
           <ListItem>Turi Balzarini</ListItem>
           <ListItem>Walter Burckhard (†)</ListItem>
-          <ListItem> Peter Fleischli</ListItem>
+          <ListItem>Peter Fleischli</ListItem>
           <ListItem>Erich Hunkeler</ListItem>
           <ListItem>Remo Moor</ListItem>
           <ListItem>Hans Odermatt</ListItem>
@@ -258,7 +258,6 @@ const About = () => {
           <ListItem>Renato Bertelle (†)</ListItem>
           <ListItem>Armin "Büsu" Suppiger</ListItem>
           <ListItem>Thomas Träger</ListItem>
-          <ListItem>Ceo Benedetti</ListItem>
           <ListItem>Christoph Träger</ListItem>
           <ListItem>Hansruedi Jossi</ListItem>
           <ListItem>Beat "Möpsu" Kunz</ListItem>
