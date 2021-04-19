@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
@@ -36,6 +36,15 @@ const Header = ({ basket }) => {
       </HiddenOnMobile>
       <StaticImage src="../images/header.png" alt="header" height={40} className="mr-4" placeholder="tracedSVG" />
       <Spacer />
+      <Link to="https://facebook.com/pilatusgeister">
+        <StaticImage
+          src="../images/facebook-logo.jpg"
+          alt="header"
+          height={40}
+          className="mr-4"
+          placeholder="tracedSVG"
+        />
+      </Link>
       <ShoppingBasket basket={basket} />
       <Hamburger setIsOpen={setMobileNavOpen} />
       <MobileNavigation links={site.data.navigation} isOpen={mobileNavOpen} setIsOpen={setMobileNavOpen} />
