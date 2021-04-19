@@ -13,7 +13,6 @@ const FliesstextMitSpalten = ({ title, children }) => {
   const Paragraph = styled.p`
     background-color: white;
     padding: 0.5rem;
-    margin: 0.5rem;
 
     @media (min-width: 1024px) {
       margin: 0;
@@ -39,7 +38,10 @@ const FliesstextMitSpalten = ({ title, children }) => {
 };
 
 const Fliesstext = ({ title, children }) => {
-  const Paragraph = styled.p``;
+  const Paragraph = styled.p`
+    background-color: white;
+    padding: 0.5rem;
+  `;
 
   return (
     <Background>
@@ -53,7 +55,7 @@ const GoetticlubMitglieder = ({ title, children }) => {
   const Paragraph = styled.p`
     background-color: white;
     column-count: 2;
-    column-gap: 10px;
+    column-gap: 8px;
     margin: 0;
 
     @media (min-width: 1280px) {
@@ -126,8 +128,9 @@ const About = () => {
   const Title = tw.h1`text-4xl text-center font-bold text-pgl-blue mt-8`;
   const Absatz = tw.p`mb-4`;
   const Text = tw.p``;
-  const List = tw.ul`list-disc ml-6`;
-  const ListItem = tw.li`font-bold text-xs lg:text-base`;
+  const List = tw.ul`list-disc ml-5`;
+  const Vorstand = tw.li``;
+  const Goetti = tw.li`text-xs lg:text-base`;
 
   const data = useStaticQuery(graphql`
     query MitgliederQuery {
@@ -201,11 +204,21 @@ const About = () => {
         <Text>Wir sind Mitglied der "Vereinigte" seit deren Gründung im Jahr 1964.</Text>
         <Text>Der aktuelle Vorstand besteht aus:</Text>
         <List>
-          <ListItem>Beat Thalmann - Präsident</ListItem>
-          <ListItem>Andi Felber - Tambourmajor und Vize-Präsident</ListItem>
-          <ListItem>Markus Helfenstein - Kassier</ListItem>
-          <ListItem>Manuel Brun - Beisitzer</ListItem>
-          <ListItem>René Sidler - Aktuar</ListItem>
+          <Vorstand>
+            <b>Beat Thalmann</b> - Präsident
+          </Vorstand>
+          <Vorstand>
+            <b>Andi Felber</b> - Tambourmajor und Vize-Präsident
+          </Vorstand>
+          <Vorstand>
+            <b>Markus Helfenstein</b> - Kassier
+          </Vorstand>
+          <Vorstand>
+            <b>Manuel Brun</b> - Beisitzer
+          </Vorstand>
+          <Vorstand>
+            <b>René Sidler</b> - Aktuar
+          </Vorstand>
         </List>
       </Fliesstext>
 
@@ -236,39 +249,39 @@ const About = () => {
 
       <GoetticlubMitglieder title="Götticlub-Mitglieder (nach Eintrittsjahr)">
         <List>
-          <ListItem>Rolf Albisser</ListItem>
-          <ListItem>Renato Amado</ListItem>
-          <ListItem>Erwin "Wini" Bächler</ListItem>
-          <ListItem>Peter Bachmann</ListItem>
-          <ListItem>Turi Balzarini</ListItem>
-          <ListItem>Walter Burckhard (†)</ListItem>
-          <ListItem>Peter Fleischli</ListItem>
-          <ListItem>Erich Hunkeler</ListItem>
-          <ListItem>Remo Moor</ListItem>
-          <ListItem>Hans Odermatt</ListItem>
-          <ListItem>Anton A. Oetterli (†)</ListItem>
-          <ListItem>Hugo "Stöge" Stocker</ListItem>
-          <ListItem>Arnold "Noldi" Torricelli</ListItem>
-          <ListItem>Charles "Charly" Vögeli (†)</ListItem>
-          <ListItem>Fritz Winteler</ListItem>
-          <ListItem>Hans-Ruedi Zai (Fahnengötti)</ListItem>
-          <ListItem>Bruno Piemontesi</ListItem>
-          <ListItem>Beat Stauffer</ListItem>
-          <ListItem>Tobias Widmer</ListItem>
-          <ListItem>Renato Bertelle (†)</ListItem>
-          <ListItem>Armin "Büsu" Suppiger</ListItem>
-          <ListItem>Thomas Träger</ListItem>
-          <ListItem>Christoph Träger</ListItem>
-          <ListItem>Hansruedi Jossi</ListItem>
-          <ListItem>Beat "Möpsu" Kunz</ListItem>
-          <ListItem>Albert "Bärti" Felber (†)</ListItem>
-          <ListItem>Andy Bühlmann</ListItem>
-          <ListItem>Kurt Maurer</ListItem>
-          <ListItem>Othmar Schütz</ListItem>
-          <ListItem>Hans Fleischli</ListItem>
-          <ListItem>Patrick Kunz</ListItem>
-          <ListItem>Daniel Renggli</ListItem>
-          <ListItem>Daniel Haas</ListItem>
+          <Goetti>Rolf Albisser</Goetti>
+          <Goetti>Renato Amado</Goetti>
+          <Goetti>Erwin "Wini" Bächler</Goetti>
+          <Goetti>Peter Bachmann</Goetti>
+          <Goetti>Turi Balzarini</Goetti>
+          <Goetti>Walter Burckhard (†)</Goetti>
+          <Goetti>Peter Fleischli</Goetti>
+          <Goetti>Erich Hunkeler</Goetti>
+          <Goetti>Remo Moor</Goetti>
+          <Goetti>Hans Odermatt</Goetti>
+          <Goetti>Anton A. Oetterli (†)</Goetti>
+          <Goetti>Hugo "Stöge" Stocker</Goetti>
+          <Goetti>Arnold "Noldi" Torricelli</Goetti>
+          <Goetti>Charles "Charly" Vögeli (†)</Goetti>
+          <Goetti>Fritz Winteler</Goetti>
+          <Goetti>Hans-Ruedi Zai (Fahnengötti)</Goetti>
+          <Goetti>Bruno Piemontesi</Goetti>
+          <Goetti>Beat Stauffer</Goetti>
+          <Goetti>Tobias Widmer</Goetti>
+          <Goetti>Renato Bertelle (†)</Goetti>
+          <Goetti>Armin "Büsu" Suppiger</Goetti>
+          <Goetti>Thomas Träger</Goetti>
+          <Goetti>Christoph Träger</Goetti>
+          <Goetti>Hansruedi Jossi</Goetti>
+          <Goetti>Beat "Möpsu" Kunz</Goetti>
+          <Goetti>Albert "Bärti" Felber (†)</Goetti>
+          <Goetti>Andy Bühlmann</Goetti>
+          <Goetti>Kurt Maurer</Goetti>
+          <Goetti>Othmar Schütz</Goetti>
+          <Goetti>Hans Fleischli</Goetti>
+          <Goetti>Patrick Kunz</Goetti>
+          <Goetti>Daniel Renggli</Goetti>
+          <Goetti>Daniel Haas</Goetti>
         </List>
       </GoetticlubMitglieder>
     </WhiteBackground>
