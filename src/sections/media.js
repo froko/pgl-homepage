@@ -48,7 +48,7 @@ const Media = () => {
           <MediaCard {...node} key={node.id} />
         ))}
         <Card>
-          <Link to={`/#media`}>
+          <Link to={`/bilder-archiv`}>
             <StaticImage
               src="../images/photo-archiv.jpg"
               width={220}
