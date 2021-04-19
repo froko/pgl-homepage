@@ -41,7 +41,7 @@ const Header = ({ basket }) => {
           src="../images/facebook-logo.jpg"
           alt="header"
           height={40}
-          className="mr-4"
+          className="mr-4 h-6 w-6"
           placeholder="tracedSVG"
         />
       </Link>
