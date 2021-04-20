@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 
 const AdBanner = () => {
   const WhiteBackground = tw.div`w-full bg-white`;
-  const FlexBox = tw.div`flex flex-wrap mx-2 justify-center`;
+  const FlexBox = tw.div`flex flex-wrap mx-2 justify-center text-center`;
   const ImageContainer = tw.div`py-2 w-1/2 lg:w-1/5`;
 
   const quality = 90;
@@ -48,7 +48,6 @@ const AdBanner = () => {
             />
           </Link>
         </ImageContainer>
-
         <ImageContainer>
           <Link to="https://www.schubiger-nw.ch/">
             <StaticImage
