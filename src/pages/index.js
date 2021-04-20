@@ -20,6 +20,10 @@ const Home = () => {
     setShoppingBasket(JSON.parse(sessionStorage.getItem('shopping-basket')) ?? []);
   }, []);
 
+  useEffect(() => {
+    window.history.replaceState(null, null, ' ');
+  });
+
   const addToBasket = (item) => {
     setShoppingBasket([...shoppingBasket, item]);
     sessionStorage.setItem('shopping-basket', JSON.stringify([...shoppingBasket, item]));
