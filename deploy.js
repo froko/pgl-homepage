@@ -7,9 +7,9 @@ const ftp = require('basic-ftp');
 const basicFtpClient = new ftp.Client();
 
 const LOCAL_BUILD_DIRECTORY = 'public';
-const DEPLOY_DIRECTORY_NAME = 'subdomains/new/deploy';
-const BACKUP_DIRECTORY_NAME = 'subdomains/new/backup';
-const PRODUCTION_DIRECTORY_NAME = 'subdomains/new/httpdocs';
+const DEPLOY_DIRECTORY_NAME = 'deploy';
+const BACKUP_DIRECTORY_NAME = 'backup';
+const PRODUCTION_DIRECTORY_NAME = 'httpdocs';
 
 function main() {
   return uploadBuildDirectory()
@@ -60,7 +60,7 @@ async function renameFtpDirectories() {
     secure: false
   });
 
-  const directories = await basicFtpClient.list('./subdomains/new');
+  const directories = await basicFtpClient.list('.');
   const backupDirectoryName = createBackupDirectoryName(directories);
   console.log(`Backup folder name: ${backupDirectoryName}`);
 
