@@ -173,22 +173,22 @@ const About = () => {
           Pilatusgeistern Tradition. Und manch anderes auch noch.
         </Absatz>
         <Absatz>
-          Die PGL-Matinées, die jeweils an den beiden Samstagen vor der Fasnacht im Stadtkeller über die Bühne gehen,
+          Die PGL-Matinéen, die jeweils an den beiden Samstagen vor der Fasnacht im Stadtkeller über die Bühne gehen,
           sind legendär. Nicht wenige der Besucher*innen stehen schon morgens um fünf Uhr (!) vor der Stadtkeller-Tür,
           um sich einen guten Platz zu sichern. Ebenfalls im Stadtkeller findet der von den Pilatusgeistern initiierte
           und organisierte Chöbu-Samschtig statt. Seit Jahren ist dieser Anlass fester Bestandteil in der Agenda
-          eingefleischter PGL-Fans. Ein ganz besonderes PGL-Schmankerl ist für Insider die offene Probe in der
-          Bocciahalle des FC Kickers. Am letzten Probemittwoch vor der Fasnacht sagen die PGL mit diesem Anlass ihrem
-          Gastgeber Dankeschön. Die Halle ist dabei jeweils zum Bersten voll.
+          eingefleischter PGL-Fans. Ein ganz besonderes PGL-Schmankerl ist für Insider die offene Probe in der Halle des
+          FC Kickers Boccia-Sektion Luzern. Am letzten Probemittwoch vor der Fasnacht sagen die PGL mit diesem Anlass
+          ihrem Gastgeber Dankeschön. Die Halle ist dabei jeweils zum Bersten voll.
         </Absatz>
         <Absatz>
           So traditionsreich wie die PGL-Anlässe sind, so ursprünglich zeigt sich eine der ältesten Guggenmusigen
           Luzerns in ihrem Auftritt. Die Sujets werden alljährlich von befreundeten Künstlern entworfen. Beim Basteln
-          legen die Mitglieder selbst Hand an. Traditionell kommt die reine Männermusig auch immer im klassischen Gewand
-          mit Rock daher. Ab und zu hört man munkeln, dies werde nur so beibehalten, weil die Röcke so schön schwingen,
-          wenn die Pilatusgeister in ihrem typischen Schunkelschritt daherkommen. Doch wer die PGL kennt, weiss: Die
-          können einfach nicht anders. Denn wenn sie einmal zu marschieren beginnen, dann schlagen die Herzen der
-          begeisterten Mitglieder meistens im Dreivierteltakt. Und jene der vielen Zuhörerinen und Zuhörer meistens
+          legen die Mitglieder selbst Hand an. Traditionell kommt die reine Männerformation auch immer im klassischen
+          Gewand mit Rock daher. Ab und zu hört man munkeln, dies werde nur so beibehalten, weil die Röcke so schön
+          schwingen, wenn die Pilatusgeister in ihrem typischen Schunkelschritt daherkommen. Doch wer die PGL kennt,
+          weiss: Die können einfach nicht anders. Denn wenn sie einmal zu marschieren beginnen, dann schlagen die Herzen
+          der begeisterten Mitglieder meistens im Dreivierteltakt. Und jene der vielen Zuhörerinnen und Zuhörer meistens
           etwas höher. Und überhaupt: Die PGL und ihre Fans mögen, lieben und pflegen die Harmonie. Dass dem so ist,
           beweist auch die Tatsache, dass die Pilatusgeister in ihrer 60-jährigen Vereinsgeschichte erst den dritten
           Präsidenten haben.
@@ -234,17 +234,17 @@ const About = () => {
       <Register title="Bässe" mitglieder={baesse} />
 
       <FliesstextMitSpalten title="Götticlub">
-        Sie haben ihr Instrument zwar an den berühmten Nagel gehängt, dennoch bleiben ehemalige Mitglieder eng mit den
+        Sie haben ihre Instrumente zwar an den berühmten Nagel gehängt, dennoch bleiben ehemalige Mitglieder eng mit den
         PGL verbunden. Im 2003 von Turi Balzarini und Fritz Winteler ins Leben gerufenen Götticlub kann Mitglied werden,
         wer mindestens fünf Jahre lang aktiver Pilatusgeist war. Im Götticlub pflegen sie weiterhin die Freundschaft und
         unterstützen die aktiven Pilatusgeister in vielen Belangen. Der traditionelle Göttibatzen ist jedes Jahr ein
-        willkommener Zustupf in die PGL-Kasse. Übergeben wird er jeweils am PGL-Ausflug, an dem die meisten Göttis jedes
-        Jahr dabei sind. Viele von ihnen sind auch regelmässig an weiteren PGL-Anlässen mit dabei. An den PGL-Matineen
-        übernehmen sie die Einlasskontrolle und bei grossen PGL-Jubiläen bilden sie den Vortrab am Monsterkonzert.
-        Jeweils am Morgen des Güdiszischtig organisieren sie ihren mittlerweilse legendären Göttiapéro auf dem
-        Kapellplatz. Dort servieren sie den zahlreichen PGL-Fans und -Aktivmitgliedern Campari Orange, Cüpli, Bier und
-        heisse Bouillon und beweisen damit auf ihre typische Art, dass Harmonie bei den PGL weit übers
-        guggenmusikalische hinausgeht.
+        willkommener Zustupf in die PGL-Kasse. Übergeben wird dieser jeweils am PGL-Ausflug, an dem die meisten Göttis
+        jedes Jahr teilnehmen. Viele von ihnen sind auch regelmässig an weiteren PGL-Anlässen mit dabei. An den
+        PGL-Matinéen übernehmen sie die Einlasskontrollen und bei grossen PGL-Jubiläen bilden sie den Vortrab am
+        Monsterkonzert. Jeweils am Morgen des Güdiszischtig organisieren sie ihren mittlerweile legendären Göttiapéro
+        auf dem Kapellplatz. Dort servieren sie den zahlreichen PGL-Fans und -Aktivmitgliedern Campari Orange, Cüpli,
+        Bier und heisse Bouillon und beweisen damit auf ihre typische Art, dass Harmonie bei den PGL weit über das
+        Guggenmusikalische hinausgeht.
       </FliesstextMitSpalten>
 
       <GoetticlubMitglieder title="Götticlub-Mitglieder (nach Eintrittsjahr)">
