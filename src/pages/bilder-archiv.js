@@ -76,7 +76,7 @@ const BilderArchiv = () => {
             <TitleContainer>
               <Title>Damals</Title>
               <AbsoluteButton>
-                <Button onClick={() => navigate('/#media')}>Zurück</Button>
+                <Button onClick={() => navigate('/#media')}>Zurück zum Archiv</Button>
               </AbsoluteButton>
             </TitleContainer>
             <Jahr jahr={2017} media={media} />
