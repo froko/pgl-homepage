@@ -10,11 +10,11 @@ import ImgWrapper from './img-wrapper';
 import 'react-image-lightbox/style.css';
 
 const byName = (a, b) => {
-  if (a.file.fileName < b.file.fileName) {
+  if (a.title < b.title) {
     return -1;
   }
 
-  if (a.file.fileName > b.file.fileName) {
+  if (a.title > b.title) {
     return 1;
   }
 
@@ -47,7 +47,7 @@ const Gallery = ({ images = [] }) => {
               }}
             >
               <ImgWrapper margin="0.25rem">
-                <GatsbyImage image={thumb} alt={img.file.fileName} />
+                <GatsbyImage image={thumb} alt={img.title} />
               </ImgWrapper>
             </Col>
           );
