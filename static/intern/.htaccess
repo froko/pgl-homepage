@@ -1,0 +1,5 @@
+AuthName "PGL Intern"
+AuthType Basic
+AuthUserFile /srv/www/vhosts/pgl.ch/auth/intern/.htpasswd
+
+require valid-user
