@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { motion } from 'framer-motion';
+import tw from 'twin.macro';
 
 import Overlay from './overlay';
 
@@ -23,6 +24,8 @@ const menuItem = {
 };
 
 const MobileNavigation = ({ links, isOpen, setIsOpen }) => {
+  const Link = tw.a`font-semibold text-xl lg:text-2xl text-gray-100`;
+
   return (
     <Overlay isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className="container mx-auto flex flex-col justify-center">
@@ -44,6 +47,11 @@ const MobileNavigation = ({ links, isOpen, setIsOpen }) => {
               </AnchorLink>
             </motion.li>
           ))}
+          <motion.li>
+            <Link href="https://pgl.ch/intern" className="my-20" variants={menuItem}>
+              Interner Bereich
+            </Link>
+          </motion.li>
         </ul>
       </div>
     </Overlay>

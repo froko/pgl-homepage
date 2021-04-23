@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 
@@ -14,6 +14,7 @@ const Header = ({ basket }) => {
   const StickyFlexBox = tw.div`fixed w-full top-0 flex justify-between items-center z-10 h-16 px-2 md:px-4 bg-white shadow-md`;
   const Spacer = tw.div`flex-grow`;
   const HiddenOnMobile = tw.div`hidden lg:block mr-4`;
+  const Link = tw.a`mr-4 lg:mr-8`;
 
   const { site } = useStaticQuery(graphql`
     query {
@@ -36,12 +37,12 @@ const Header = ({ basket }) => {
       </HiddenOnMobile>
       <StaticImage src="../images/header.png" alt="header" height={40} className="mr-4" placeholder="tracedSVG" />
       <Spacer />
-      <Link to="https://facebook.com/pilatusgeister">
+      <Link href="https://facebook.com/pilatusgeister">
         <StaticImage
           src="../images/facebook-logo.jpg"
           alt="header"
           height={40}
-          className="mr-4 h-6 w-6"
+          className="h-6 w-6"
           placeholder="tracedSVG"
         />
       </Link>

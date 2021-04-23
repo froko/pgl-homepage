@@ -18,8 +18,7 @@ module.exports = {
       { name: 'Über uns', to: '/#about' },
       { name: 'Archiv', to: '/#media' },
       { name: 'Shop', to: '/#shop' },
-      { name: 'Kontakt', to: '/#contact' },
-      { name: 'Interner Bereich', to: 'https://pgl.ch/intern' }
+      { name: 'Kontakt', to: '/#contact' }
     ]
   },
   flags: {
