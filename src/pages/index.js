@@ -24,6 +24,19 @@ const Home = () => {
     window.history.replaceState(null, null, ' ');
   });
 
+  useEffect(() => {
+    const keys = [];
+    for (let index = 0; index < sessionStorage.length; index++) {
+      if (sessionStorage.key(index).startsWith('@@scroll')) {
+        keys.push(sessionStorage.key(index));
+      }
+    }
+
+    keys.forEach((key) => {
+      sessionStorage.removeItem(key);
+    });
+  });
+
   const addToBasket = (item) => {
     setShoppingBasket([...shoppingBasket, item]);
     sessionStorage.setItem('shopping-basket', JSON.stringify([...shoppingBasket, item]));
