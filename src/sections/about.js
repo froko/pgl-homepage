@@ -10,7 +10,7 @@ const Title = tw.h3`text-pgl-blue text-lg lg:text-xl font-bold text-center borde
 const Background = tw.div`bg-white mt-4 px-2 lg: px-4 py-4 mx-2 md:mx-0`;
 
 const FliesstextMitSpalten = ({ title, children }) => {
-  const Paragraph = styled.p`
+  const Paragraph = styled.div`
     background-color: white;
     padding: 0.5rem;
 
@@ -38,7 +38,7 @@ const FliesstextMitSpalten = ({ title, children }) => {
 };
 
 const Fliesstext = ({ title, children }) => {
-  const Paragraph = styled.p`
+  const Paragraph = styled.div`
     background-color: white;
     padding: 0.5rem;
   `;
@@ -52,7 +52,7 @@ const Fliesstext = ({ title, children }) => {
 };
 
 const GoetticlubMitglieder = ({ title, children }) => {
-  const Paragraph = styled.p`
+  const Paragraph = styled.div`
     background-color: white;
     column-count: 2;
     column-gap: 8px;
