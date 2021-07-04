@@ -7,8 +7,8 @@ import AdBanner from '../components/ad-banner';
 
 const Hero = () => {
   const FullScreenContainer = tw.div`relative h-screen bg-black bg-opacity-30`;
-  const ImageContainer = tw.div`absolute w-screen bottom-44 lg:bottom-24 text-center`;
-  const AdContainer = tw.div`absolute w-screen bottom-8 lg:bottom-0 h-36 lg:h-16`;
+  const ImageContainer = tw.div`absolute w-screen bottom-48 lg:bottom-24 text-center`;
+  const AdContainer = tw.div`absolute w-screen bottom-8 lg:bottom-0 h-40 lg:h-16`;
   const SubTitle = tw.h2`text-3xl lg:text-4xl font-bold text-gray-100 mb-2`;
 
   return (
