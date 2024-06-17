@@ -34,7 +34,7 @@ importers:
         version: 9.26.1
       contentful:
         specifier: ^10.12.0
-        version: 10.12.0
+        version: 10.12.1
       nanostores:
         specifier: ^0.10.3
         version: 0.10.3
@@ -1129,8 +1129,8 @@ packages:
     resolution: {integrity: sha512-XiHuDd/UBXm1hIUI8gB5CSDhgFAPkTs31x4W8GNb3QmumZfdnyRpQdgQM5EIPhaO94Y+WP/gjUAhjtReBlcXXg==}
     engines: {node: '>=18'}
 
-  contentful@10.12.0:
-    resolution: {integrity: sha512-jGu15/nY7SQ24pbA3tXSPo5URxnZcBeV6wnH0pF1z/DguCUK2CftjBH4LSHrIevw2RdDuFU9VsAh8kjT1B2dbg==}
+  contentful@10.12.1:
+    resolution: {integrity: sha512-rGo4OgL7hMPOhUQ1v9ELqWFhFkzmyoO2ILTZciv9HLGG6lhcEtXH4eAaO46XPKswyabPwuCjTERc/XBGVSLLDg==}
     engines: {node: '>=18'}
 
   convert-source-map@2.0.0:
@@ -2698,8 +2698,8 @@ packages:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
 
-  type-fest@4.20.0:
-    resolution: {integrity: sha512-MBh+PHUHHisjXf4tlx0CFWoMdjx8zCMLJHOjnV1prABYZFHqtFOyauCIK2/7w4oIfwkF8iNhLtnJEfVY2vn3iw==}
+  type-fest@4.20.1:
+    resolution: {integrity: sha512-R6wDsVsoS9xYOpy8vgeBlqpdOyzJ12HNfQhC/aAKWM3YoCV9TtunJzh/QpkMgeDhkoynDcw5f1y+qF9yc/HHyg==}
     engines: {node: '>=16'}
 
   typedarray@0.0.6:
@@ -4041,7 +4041,7 @@ snapshots:
       p-throttle: 4.1.1
       qs: 6.12.1
 
-  contentful@10.12.0:
+  contentful@10.12.1:
     dependencies:
       '@contentful/content-source-maps': 0.6.0
       '@contentful/rich-text-types': 16.5.2
@@ -4049,7 +4049,7 @@ snapshots:
       contentful-resolve-response: 1.8.1
       contentful-sdk-core: 8.1.4
       json-stringify-safe: 5.0.1
-      type-fest: 4.20.0
+      type-fest: 4.20.1
     transitivePeerDependencies:
       - debug
 
@@ -5844,7 +5844,7 @@ snapshots:
 
   type-fest@2.19.0: {}
 
-  type-fest@4.20.0: {}
+  type-fest@4.20.1: {}
 
   typedarray@0.0.6: {}
 
