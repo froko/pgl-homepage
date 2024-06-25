@@ -16,7 +16,7 @@ importers:
         version: 5.1.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))(tailwindcss@3.4.4)
       '@contentful/rich-text-html-renderer':
         specifier: ^16.5.2
-        version: 16.5.2
+        version: 16.5.5
       '@nanostores/persistent':
         specifier: ^0.10.1
         version: 0.10.1(nanostores@0.10.3)
@@ -261,12 +261,16 @@ packages:
   '@contentful/content-source-maps@0.6.0':
     resolution: {integrity: sha512-REX3kUm4f2tkdfJArqblhKL7SMLfEG18eF3vcQA+8KdBqo+7lNS2W2CuPt2i8uvdgt1aKliGXJeJTgZjYFpCqw==}
 
-  '@contentful/rich-text-html-renderer@16.5.2':
-    resolution: {integrity: sha512-OHdVZbkRdHbl0pLNhSyUUIhRQGWIhuYaoQkkt2tKayHE+lB2ID4lJwYAl2yo1enAUCdKcHcyxPJu2Gm3L5p35Q==}
+  '@contentful/rich-text-html-renderer@16.5.5':
+    resolution: {integrity: sha512-H14IxH2YtkvgXu4gsMUjFyiTeU1c2vhkJHRAV1FDn+rHa7DUSQYfFRQuZWykJzOloI3Yx1hNtFVmCWjtG9hmPw==}
     engines: {node: '>=6.0.0'}
 
   '@contentful/rich-text-types@16.5.2':
     resolution: {integrity: sha512-qD98Amp/vWxCYMtv7yprh4Ry3QHFX50sf+i3E6e/WRquz+aUW2ilqmQqW6ucb4F2dlatUxMbOOhZOFazv2XLjg==}
+    engines: {node: '>=6.0.0'}
+
+  '@contentful/rich-text-types@16.5.4':
+    resolution: {integrity: sha512-6JSE2etGKZ2zULlFXCmP0Z/xttxoQEhMsFhEYQAHLZdH7mLnbEXkaiS7zc5X8xoTs3x++esflW4MWbyvCWPx1Q==}
     engines: {node: '>=6.0.0'}
 
   '@emnapi/runtime@1.2.0':
@@ -3166,12 +3170,14 @@ snapshots:
       '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
 
-  '@contentful/rich-text-html-renderer@16.5.2':
+  '@contentful/rich-text-html-renderer@16.5.5':
     dependencies:
-      '@contentful/rich-text-types': 16.5.2
+      '@contentful/rich-text-types': 16.5.4
       escape-html: 1.0.3
 
   '@contentful/rich-text-types@16.5.2': {}
+
+  '@contentful/rich-text-types@16.5.4': {}
 
   '@emnapi/runtime@1.2.0':
     dependencies:
